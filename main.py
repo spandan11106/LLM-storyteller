@@ -1,8 +1,6 @@
 # main.py
 import json
-from llm_client import client
-from memory_manager import MemoryManager
-import config
+from storyteller import client, MemoryManager, config
 
 def main():
     """Main function to run the AI Dungeon Master."""

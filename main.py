@@ -78,16 +78,23 @@ def main():
                 model=config.LLM_MODEL,
             )
             ai_response = chat_completion.choices[0].message.content
-            print(f"\nDM: {ai_response}")
+            # Sanitize response to avoid surrogate encoding errors when printing
+            try:
+                safe_ai = ai_response.encode('utf-8', errors='replace').decode('utf-8')
+            except Exception:
+                safe_ai = ai_response
+            print(f"\nDM: {safe_ai}")
 
             # 7. Update history and save all memory types
-            turn_text = f"Player: {user_input}\nDM: {ai_response}"
+            turn_text = f"Player: {user_input}\nDM: {safe_ai}"
             conversation_history.append({"role": "user", "content": user_input})
-            conversation_history.append({"role": "assistant", "content": ai_response})
+            conversation_history.append({"role": "assistant", "content": safe_ai})
             memory.save_memory(turn_text, user_input)
 
         except Exception as e:
-            print(f"An error occurred: {e}")
+            import traceback
+            print("An error occurred:")
+            traceback.print_exc()
             break
 
 if __name__ == "__main__":

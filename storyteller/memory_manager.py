@@ -5,6 +5,16 @@ from .llm_client import client
 from . import config
 
 
+def _safe_text(x):
+    """Return a UTF-8-safe string representation of x."""
+    try:
+        if isinstance(x, str):
+            return x.encode('utf-8', errors='replace').decode('utf-8')
+        return json.dumps(x, ensure_ascii=False)
+    except Exception:
+        return str(x)
+
+
 class MemoryManager:
     """Handles all memory operations, including a simple knowledge graph."""
 
@@ -27,7 +37,11 @@ class MemoryManager:
             response = client.chat.completions.create(
                 messages=[{"role": "user", "content": summary_prompt}], model=config.LLM_MODEL
             )
-            return response.choices[0].message.content
+            raw = response.choices[0].message.content
+            try:
+                return raw.encode('utf-8', errors='replace').decode('utf-8')
+            except Exception:
+                return raw
         except Exception as e:
             print(f"Error generating summary: {e}")
             return ""
@@ -43,11 +57,11 @@ class MemoryManager:
                 # Simple keyword check for demo reliability
                 if "summons" in quest_name.lower() and "answer" in user_input.lower():
                     self.knowledge_graph["Quests"][quest_name] = "completed"
-                    print(f"[\ud83d\udcdc Quest Updated: '{quest_name}' status set to completed]")
+                    print(f"[📜 Quest Updated: '{_safe_text(quest_name)}' status set to completed]")
                     updated_quests = True
 
         if updated_quests:
-            print(f"[\ud83d\udcdc Current Quests: {self.knowledge_graph['Quests']}]")
+            print(f"[📜 Current Quests: {_safe_text(self.knowledge_graph['Quests'])}]")
 
         # --- Fact Extraction Logic ---
         fact_extraction_prompt = f"""
@@ -68,11 +82,16 @@ If no facts are found, return an empty list.
                 model=config.LLM_MODEL,
                 response_format={"type": "json_object"},
             )
-            data = json.loads(response.choices[0].message.content)
+            raw = response.choices[0].message.content
+            try:
+                clean = raw.encode('utf-8', errors='replace').decode('utf-8')
+            except Exception:
+                clean = raw
+            data = json.loads(clean)
 
             facts = data.get('facts', [])
             if isinstance(facts, list):
-                print(f"\n[\ud83e\udde0 Extracted Facts: {facts}]")
+                print(f"\n[🧠 Extracted Facts: {_safe_text(facts)}]")
                 for fact in facts:
                     if isinstance(fact, dict):
                         entity_name = fact.get('subject') or fact.get('entity')
@@ -93,7 +112,7 @@ If no facts are found, return an empty list.
         self.turn_count += 1
         summary = self._get_summary(turn_text)
         if summary:
-            print(f"\n[\ud83d\udcdd Saving memory: '{summary}']")
+            print(f"\n[📝 Saving memory: '{_safe_text(summary)}']")
             embedding = self.embedding_model.encode(summary).tolist()
             self.collection.add(
                 embeddings=[embedding], documents=[summary], ids=[f"turn_{self.turn_count}"]

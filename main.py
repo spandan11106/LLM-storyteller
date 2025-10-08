@@ -13,7 +13,7 @@ def determine_skill(user_input):
     action_phrases = ["i try to", "i attempt to", "i want to"]
     if any(user_input.lower().startswith(phrase) for phrase in action_phrases):
         for skill, keywords in config.DND_RULES['skills'].items():
-            if keyword in user_input.lower():
+            if any(keyword in user_input.lower() for keyword in keywords):
                 return skill
     return None
 
@@ -64,25 +64,48 @@ def game_logic_thread(user_input, ui_queue):
     except Exception as e:
         ui_queue.put(("dm_response", f"An error occurred: {e}"))
 
-def create_character(memory):
-    """Guides character creation and adds the character to the graph."""
-    print("--- Character Creation ---")
-    name = input("Enter your character's name: ")
-    print("Choose your class: Fighter, Rogue, Wizard")
-    p_class = ""
-    while p_class not in config.DND_RULES["classes"]:
-        p_class = input("> ").capitalize()
-    
-    class_info = config.DND_RULES["classes"][p_class]
-    memory.graph.add_node("Player", type='player', name=name, class_name=p_class, **{class_info["modifier"]: class_info["value"]})
-    print(f"Welcome, {name} the {p_class}! Your adventure begins...")
+def create_character_window(memory, app):
+    """Creates a top-level window for character creation."""
+    window = ctk.CTkToplevel(app)
+    window.title("Character Creation")
+    window.geometry("300x250")
+
+    ctk.CTkLabel(window, text="Enter your character's name:").pack(pady=10)
+    name_entry = ctk.CTkEntry(window)
+    name_entry.pack(pady=5)
+
+    ctk.CTkLabel(window, text="Choose your class:").pack(pady=10)
+    class_var = ctk.StringVar(value="Fighter")
+    class_menu = ctk.CTkOptionMenu(window, variable=class_var, values=["Fighter", "Rogue", "Wizard"])
+    class_menu.pack(pady=5)
+
+    def submit():
+        name = name_entry.get()
+        p_class = class_var.get()
+        if name and p_class:
+            class_info = config.DND_RULES["classes"][p_class]
+            attributes = {
+                "name": name,
+                "class": p_class,
+                "type": "player",
+                class_info["modifier"]: class_info["value"]
+            }
+            memory.graph.add_node("Player", **attributes)
+            
+            app.ui_queue.put(("update_char_info", attributes))
+            
+            app.display_message(f"Welcome, {name} the {p_class}! Your adventure begins...\n\n", "dm")
+            window.destroy()
+
+    submit_button = ctk.CTkButton(window, text="Submit", command=submit)
+    submit_button.pack(pady=15)
 
 if __name__ == "__main__":
     ctk.set_appearance_mode("dark")
     
     memory_manager = MemoryManager()
-    create_character(memory_manager)
     
     app = ChatApp(game_logic_runner=game_logic_thread)
+    create_character_window(memory_manager, app)
     app.start_game()
     app.mainloop()

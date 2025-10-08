@@ -19,6 +19,7 @@ class PlayerAgent:
     def __init__(self, embedding_model: Optional[str] = None):
         self.embedding_model_name = embedding_model or config.EMBEDDING_MODEL
         self.embedder = SentenceTransformer(self.embedding_model_name)
+        self.recent_actions = []
 
     def _build_prompt(self, persona: str, goal: str, context: str, examples: List[str] = None) -> str:
         examples = examples or []
@@ -83,16 +84,26 @@ class PlayerAgent:
             if not candidates:
                 attempts += 1
                 continue
+            
+            # Filter out recent actions
+            candidates = [c for c in candidates if c not in self.recent_actions]
+
+            if not candidates:
+                attempts += 1
+                continue
+
             scores = self.score_candidates(candidates, context)
             ranked = sorted(zip(candidates, scores), key=lambda x: x[1], reverse=True)
-            # pick best that passes relevance filter
+            
             for cand, sc in ranked:
                 if self._relevance_filter(cand, context, plot_point):
-                    # optionally sample with softmax influenced by temperature
+                    self.recent_actions.append(cand)
+                    if len(self.recent_actions) > 5:  # Keep the last 5 actions
+                        self.recent_actions.pop(0)
                     return cand
-            # if none pass, try again
+            
             attempts += 1
-        # final fallback: return top ranked
-        if candidates:
+
+        if 'ranked' in locals() and ranked:
             return ranked[0][0]
         return "I look around carefully and decide my next move."

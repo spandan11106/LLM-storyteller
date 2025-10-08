@@ -62,55 +62,8 @@ class RAGManager:
 
     def retrieve(self, query, n_results=5):
         """Retrieve relevant turn_texts for a query using vector search + graph signals."""
-        # 1) vector search
-        q_emb = self.embedding_model.encode(query).tolist()
-        if self.collection.count() == 0:
-            vector_docs = []
-        else:
-            results = self.collection.query(query_embeddings=[q_emb], n_results=min(n_results, self.collection.count()))
-            vector_docs = []
-            try:
-                docs = results.get('documents', [[]])[0]
-                metas = results.get('metadatas', [[]])[0]
-                for d, m in zip(docs, metas):
-                    vector_docs.append(m.get('turn_text', d))
-            except Exception:
-                vector_docs = []
-
-        # 2) graph-based signals: match nodes whose name or attributes contain query tokens
-        q_words = set(re.sub(r"[^\w\s]", "", query).lower().split())
-        matched_turn_ids = set()
-        for node, data in self.graph.nodes(data=True):
-            node_text = str(node).lower()
-            if any(w in node_text for w in q_words):
-                sid = data.get('source_id')
-                if sid is not None:
-                    matched_turn_ids.add(int(sid))
-            # also search string attributes
-            for k, v in data.items():
-                try:
-                    if isinstance(v, str) and any(w in v.lower() for w in q_words):
-                        sid = data.get('source_id')
-                        if sid is not None:
-                            matched_turn_ids.add(int(sid))
-                except Exception:
-                    continue
-
-        graph_docs = []
-        for tid in sorted(matched_turn_ids):
-            # attempt to get the turn_text from chroma metadata if present
-            try:
-                # metadata retrieval: query by id
-                res = self.collection.get(ids=[str(tid)])
-                metas = res.get('metadatas', [[]])[0]
-                if metas and isinstance(metas[0], dict) and 'turn_text' in metas[0]:
-                    graph_docs.append(metas[0]['turn_text'])
-                else:
-                    docs = res.get('documents', [[]])[0]
-                    if docs:
-                        graph_docs.append(docs[0])
-            except Exception:
-                continue
+        vector_docs = self._vector_search(query, n_results)
+        graph_docs = self._graph_search(query)
 
         # combine, prefer graph_docs first then vector_docs (dedupe)
         seen = set()
@@ -122,6 +75,62 @@ class RAGManager:
             if len(combined) >= n_results:
                 break
         return combined
+
+    def _vector_search(self, query, n_results):
+        """Performs a vector search in ChromaDB."""
+        q_emb = self.embedding_model.encode(query).tolist()
+        if self.collection.count() == 0:
+            return []
+        
+        results = self.collection.query(
+            query_embeddings=[q_emb], 
+            n_results=min(n_results, self.collection.count())
+        )
+        
+        vector_docs = []
+        try:
+            docs = results.get('documents', [[]])[0]
+            metas = results.get('metadatas', [[]])[0]
+            for d, m in zip(docs, metas):
+                vector_docs.append(m.get('turn_text', d))
+        except Exception:
+            pass
+        return vector_docs
+
+    def _graph_search(self, query):
+        """Searches the knowledge graph for matching nodes."""
+        q_words = set(re.sub(r"[^\w\s]", "", query).lower().split())
+        matched_turn_ids = set()
+        for node, data in self.graph.nodes(data=True):
+            node_text = str(node).lower()
+            if any(w in node_text for w in q_words):
+                sid = data.get('source_id')
+                if sid is not None:
+                    matched_turn_ids.add(int(sid))
+            
+            for k, v in data.items():
+                try:
+                    if isinstance(v, str) and any(w in v.lower() for w in q_words):
+                        sid = data.get('source_id')
+                        if sid is not None:
+                            matched_turn_ids.add(int(sid))
+                except Exception:
+                    continue
+
+        graph_docs = []
+        for tid in sorted(matched_turn_ids):
+            try:
+                res = self.collection.get(ids=[str(tid)])
+                metas = res.get('metadatas', [[]])[0]
+                if metas and isinstance(metas[0], dict) and 'turn_text' in metas[0]:
+                    graph_docs.append(metas[0]['turn_text'])
+                else:
+                    docs = res.get('documents', [[]])[0]
+                    if docs:
+                        graph_docs.append(docs[0])
+            except Exception:
+                continue
+        return graph_docs
 
     def extract_facts(self, text):
         """Deterministic, small extractor to produce facts usable for the graph.

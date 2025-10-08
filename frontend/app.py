@@ -25,18 +25,15 @@ class ChatApp(ctk.CTk):
         self.ui_queue = queue.Queue()
         self.after(100, self.process_queue)
         
-        # Configure tags for text coloring
-        self.textbox.tag_config("dm", foreground="#00FF00") # Green for DM
-        self.textbox.tag_config("roll", foreground="#FFA500") # Orange for rolls
-        self.textbox.tag_config("event", foreground="#808080") # Grey for events
+        self.textbox.tag_config("dm", foreground="#00FF00")
+        self.textbox.tag_config("roll", foreground="#FFA500")
 
     def send_message(self, event=None):
         message = self.entry.get()
         if message:
-            self.display_message(f"You: {message}\n\n", "user") # User text is default color
+            self.display_message(f"You: {message}\n\n", "user")
             self.entry.delete(0, "end")
-            thread = Thread(target=self.game_logic_runner, args=(message, self.ui_queue), daemon=True)
-            thread.start()
+            Thread(target=self.game_logic_runner, args=(message, self.ui_queue), daemon=True).start()
 
     def display_message(self, message, tag):
         self.textbox.configure(state="normal")
@@ -51,8 +48,6 @@ class ChatApp(ctk.CTk):
                 self.display_message(f"DM: {content}\n\n", "dm")
             elif message_type == "roll":
                 self.display_message(f"🎲 {content}\n\n", "roll")
-            elif message_type == "event":
-                self.display_message(f"[EVENT] {content}\n\n", "event")
         except queue.Empty:
             pass
         finally:
@@ -60,5 +55,5 @@ class ChatApp(ctk.CTk):
 
     def start_game(self):
         """Displays the initial welcome message."""
-        welcome_text = "You find yourself in a dimly lit tavern. The air smells of stale ale and sawdust. A fire crackles in the hearth, casting long shadows across the room. What do you do?\n\n"
+        welcome_text = "You find yourself in a dimly lit tavern...\n\nWhat do you do?\n"
         self.display_message(f"DM: {welcome_text}", "dm")

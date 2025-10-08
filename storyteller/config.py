@@ -3,31 +3,23 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# --- API and Model Configuration ---
+# API and Model Configuration
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 LLM_MODEL = "llama-3.1-8b-instant" 
 
-# --- Memory Configuration ---
-WORKING_MEMORY_SIZE = 10
+# Embedding model and DB collection defaults
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 DB_COLLECTION_NAME = "episodic_memory"
 
-# --- Plot Point Configuration ---
+# Plot Point Configuration
 PLOT_POINTS = [
-    "MEET_MYSTERIOUS_STRANGER",
-    "GET_THE_QUEST",
-    "FIND_THE_HIDDEN_CAVE",
-    "CONFRONT_THE_GOBLIN_LEADER"
+    "LEARN_OF_THE_CURSE_FROM_FINNLEY",
+    "CONFRONT_THE_RIVAL_SEEKER",
+    "DECIPHER_THE_MAP_TO_THE_CAVE",
+    "RETRIEVE_THE_AMULET_AND_LIFT_THE_CURSE"
 ]
 
-# --- D&D System Prompt & Rules ---
-GAME_SYSTEM_PROMPT = (
-    "You are a skilled D&D Dungeon Master. Your primary goal is to guide the player through the story. "
-    "1. **Follow the Active Plot Point:** You will be given an 'Active Plot Point'. Your main job is to create a response that moves the story toward completing this goal. If the player does something unexpected, connect it back to the plot. "
-    "2. **Be Concise & Interactive:** Keep descriptions to 2-5 sentences and ALWAYS end by asking 'What do you do?' often with 2-3 numbered choices. "
-    "3. **Adhere to Facts:** You MUST treat all provided facts about the world and player as absolute truth."
-)
-
+# D&D Rules
 DND_RULES = {
     "classes": {
         "Fighter": {"modifier": "strength", "value": 3},
@@ -40,3 +32,22 @@ DND_RULES = {
         "intelligence": ["investigate", "recall history", "decipher", "examine"]
     }
 }
+
+# The final, definitive prompt for the 'Unified AI Core'
+MASTER_SYSTEM_PROMPT = """
+You are a Master Storyteller AI for a D&D game. You have two jobs: first, narrate the story, and second, act as your own data analyst.
+
+You will be given the context (plot, memory, facts) and the player's action.
+You MUST respond with a single, valid JSON object with three keys: "narrative", "facts", and "plot_completed".
+
+1.  **"narrative" (string):** Write the next part of the story.
+    - Be creative and interactive. Follow all the rules of good DMing (dialogue format, ask "What do you do?", etc.).
+    - Your narrative MUST be based on the context provided.
+
+2.  **"facts" (list of objects):** After writing the narrative, extract all key facts from the text YOU JUST WROTE.
+    - Use the format: `{"subject": "entity", "relation": "verb", "object": "entity"}` or `{"entity": "entity", "property": "attribute", "value": "description"}`.
+    - If there are no new facts, return an empty list `[]`.
+
+3.  **"plot_completed" (boolean):** After writing the narrative, determine if the player's action successfully completed the "Active Plot Point".
+    - Return `true` if completed, `false` otherwise.
+"""

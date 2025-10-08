@@ -12,7 +12,7 @@ EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 DB_COLLECTION_NAME = "episodic_memory"
 SCENE_COLLECTION_NAME = "scene_memory"
 
-# --- UPDATED: A simple, linear quest chain ---
+# --- A simple, linear quest chain ---
 PLOT_POINTS = [
     "Investigate Boric's stolen hammer",
     "Track the goblins in the Whispering Woods",
@@ -58,12 +58,31 @@ The tone can be: Polite, Rude, Threatening, or Neutral.
 Respond with a single, valid JSON object with a single key "tone".
 """
 
+# --- UPDATED: The 'Data Analyst' prompt now identifies entity types ---
 FACT_EXTRACTION_PROMPT = """
 You are a data analyst AI. Your job is to extract key facts from a narrative text.
 Analyze the text and identify all entities, their type, and their relationships or properties.
 The entity_type MUST be one of: 'person', 'item', 'location', or 'other'.
 Return a single, valid JSON object with a single key "facts".
+
+Use one of these two formats for facts:
+1. {"subject": "entity_name", "relation": "verb", "object": "entity_name"}
+2. {"entity": "entity_name", "entity_type": "person", "property": "attribute", "value": "description"}
+
+Example:
+Text: "Finnley, an old man, is in the rustic cottage. He holds a glowing amulet."
+JSON:
+{
+  "facts": [
+    {"entity": "Finnley", "entity_type": "person", "property": "is", "value": "old man"},
+    {"subject": "Finnley", "relation": "is_in", "object": "rustic cottage"},
+    {"entity": "rustic cottage", "entity_type": "location", "property": "is", "value": "rustic"},
+    {"subject": "Finnley", "relation": "holds", "object": "glowing amulet"},
+    {"entity": "glowing amulet", "entity_type": "item", "property": "is", "value": "glowing"}
+  ]
+}
 """
+
 
 SCENE_SUMMARY_PROMPT = """
 You are a story archivist. Your job is to read a transcript of a scene from a story and write a very concise summary.

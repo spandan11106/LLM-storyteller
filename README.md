@@ -1,168 +1,74 @@
-<<<<<<< HEAD
-# LLM-storyteller
-=======
-# LLM-storyteller
+# LLM Storyteller 🐉
 
-A lightweight AI-powered Dungeon Master / story engine that uses the Groq LLM API to generate narrative responses, and a small memory system (episodic memories + a simple knowledge graph) powered by Chroma and SentenceTransformers.
+A graphical, AI-powered Dungeon Master and interactive story engine. This application uses the Groq LLM API to generate dynamic, narrative-driven adventures. It features an advanced memory system to ensure story coherence and a dynamic social AI that allows NPCs to react to the player's behavior.
 
-This repository provides a minimal interactive loop (`main.py`) where a player types actions, the LLM responds as a Dungeon Master, and memories & facts are stored and retrieved to keep the world state consistent.
+*(You can add a screenshot of your application here!)*
 
 ## Features
-- Interactive CLI story loop (see `main.py`).
-- Episodic memory: summarizes turns and stores vector embeddings in a Chroma collection (`memory_manager.py`).
-- Knowledge graph: extracts structured facts from turns and keeps a small in-memory graph for factual consistency.
-- Uses Groq LLM client via `llm_client.py`; model configured in `config.py`.
+
+* **Graphical User Interface**: A clean, modern UI built with `customtkinter` that includes a chat window and a dynamic sidebar for character and NPC status.
+* **Dynamic Storytelling**: Powered by the Groq LLM API (`llama-3.1-8b-instant`) to generate creative and responsive narratives.
+* **Advanced Three-Tier Memory**:
+    * **L1 (Turn Memory)**: Remembers the most recent turns for immediate context.
+    * **L2 (Scene Memory)**: Intelligently detects scene changes and creates summaries for medium-term recall.
+    * **L3 (Core Memory)**: Maintains a constantly updated summary of the entire story, ensuring the AI never forgets key events.
+* **Dynamic Social AI**: NPCs have emotional states and relationship scores that change based on the player's tone. The system dynamically detects new NPCs introduced in the story and begins tracking them.
+* **Simple Gameplay Mechanics**: A narrative-driven system for player state ('Healthy' or 'Wounded') and a linear plot-point quest system.
 
 ## Requirements
-- Python 3.10+ (tested with 3.12 in this workspace)
-- See `requirements.txt` for Python packages. Key dependencies:
-	- groq
-	- python-dotenv
-	- chromadb
-	- sentence-transformers
+
+* Python 3.10+
+* Dependencies listed in `requirements.txt`, including:
+    * `groq`
+    * `python-dotenv`
+    * `customtkinter`
+    * `networkx`
+    * `sentence-transformers`
 
 ## Quickstart
-1. Create and activate a virtual environment (recommended):
+
+1.  **Set up a virtual environment** (recommended):
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Create a `.env` file** in the project's root directory and add your Groq API key:
+    ```text
+    GROQ_API_KEY=your_groq_api_key_here
+    ```
+
+4.  **Run the application**:
+    ```bash
+    python main.py
+    ```
+
+## How to Run Tests
+
+The project includes a comprehensive test suite to validate all core features. To run all tests and generate a detailed report, use the `run_tests.py` script:
 
 ```bash
-python -m venv venv
-source venv/bin/activate
+python run_tests.py
 ```
 
-2. Install dependencies:
+## Project Structure
 
-```bash
-pip install -r requirements.txt
-```
-
-3. Create a `.env` file in the project root with your Groq API key:
-
-```text
-GROQ_API_KEY=your_groq_api_key_here
-```
-
-4. (Optional) Confirm a working model ID with `check_models.py`:
-
-# LLM-storyteller
-
-A lightweight AI-powered Dungeon Master / story engine that uses the Groq LLM API to generate narrative responses, and a small memory system (episodic memories + a simple knowledge graph) powered by Chroma and SentenceTransformers.
-
-This repository provides a minimal interactive loop (`main.py`) where a player types actions, the LLM responds as a Dungeon Master, and memories & facts are stored and retrieved to keep the world state consistent.
-
-## Features
-- Interactive CLI story loop (see `main.py`).
-- Episodic memory: summarizes turns and stores vector embeddings in a Chroma collection (`memory_manager.py`).
-- Knowledge graph: extracts structured facts from turns and keeps a small in-memory graph for factual consistency.
-- Uses Groq LLM client via `llm_client.py`; model configured in `config.py`.
-
-## Requirements
-- Python 3.10+ (tested with 3.12 in this workspace)
-- See `requirements.txt` for Python packages. Key dependencies:
-  - groq
-  - python-dotenv
-  - chromadb
-  - sentence-transformers
-
-## Quickstart
-1. Create and activate a virtual environment (recommended):
-
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Create a `.env` file in the project root with your Groq API key:
-
-```text
-GROQ_API_KEY=your_groq_api_key_here
-```
-
-4. (Optional) Confirm a working model ID with `check_models.py`:
-
-# LLM-storyteller
-
-A lightweight AI-powered Dungeon Master / story engine that uses the Groq LLM API to generate narrative responses, and a small memory system (episodic memories + a simple knowledge graph) powered by Chroma and SentenceTransformers.
-
-This repository provides a minimal interactive loop (`main.py`) where a player types actions, the LLM responds as a Dungeon Master, and memories & facts are stored and retrieved to keep the world state consistent.
-
-## Features
-- Interactive CLI story loop (see `main.py`).
-- Episodic memory: summarizes turns and stores vector embeddings in a Chroma collection (`memory_manager.py`).
-- Knowledge graph: extracts structured facts from turns and keeps a small in-memory graph for factual consistency.
-- Uses Groq LLM client via `llm_client.py`; model configured in `config.py`.
-
-## Requirements
-- Python 3.10+ (tested with 3.12 in this workspace)
-- See `requirements.txt` for Python packages. Key dependencies:
-  - groq
-  - python-dotenv
-  - chromadb
-  - sentence-transformers
-
-## Quickstart
-1. Create and activate a virtual environment (recommended):
-
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Create a `.env` file in the project root with your Groq API key:
-
-```text
-GROQ_API_KEY=your_groq_api_key_here
-```
-
-4. (Optional) Confirm a working model ID with `scripts/check_models.py`:
-
-```bash
-python scripts/check_models.py
-```
-
-5. Adjust `storyteller/config.py` if you want to change the model (`LLM_MODEL`), the embedding model, or memory settings.
-
-6. Run the interactive DM loop:
-
-```bash
-python main.py
-```
-
-Controls:
-- Type normal text to take actions in the story.
-- Type `/questlog` to print the active quests stored in the knowledge graph.
-- Type `quit` to exit.
-
-## Important configuration
-- `GROQ_API_KEY` (from your `.env`) — required.
-- `storyteller.config.LLM_MODEL` — model id used for chat calls. The default in `storyteller/config.py` is a placeholder; use `scripts/check_models.py` to list available models for your key.
-- `storyteller.config.EMBEDDING_MODEL` — SentenceTransformers model used for embeddings (default: `all-MiniLM-L6-v2`).
-
-## Project layout
-- `storyteller/` - package containing core modules (`config.py`, `llm_client.py`, `memory_manager.py`).
-- `main.py` - interactive CLI using `storyteller` package.
-- `scripts/` - helpful scripts such as `check_models.py`.
-- `requirements.txt` - Python dependencies.
-- `run.py` - optional entrypoint that calls `main.py`.
-
-## Notes & troubleshooting
-- If model calls fail, verify `GROQ_API_KEY` and that `storyteller.config.LLM_MODEL` is set to a valid model id for that key.
-- The first time the sentence-transformers model downloads it may take some time and network bandwidth.
-- Chroma creates local storage for vectors by default; ensure you have write permission in the project directory.
-
-## Contributing
-Feel free to open issues or PRs. Small improvements that help reproducibility are welcome (tests, type hints, CI).
+* `main.py`: The main entry point to launch the graphical application.
+* `frontend/`: Contains the customtkinter UI code.
+* `storyteller/`: The core package containing all backend logic:
+    * `engine.py`: The main game loop and logic.
+    * `memory_manager.py`: Manages the overall memory state.
+    * `rag_manager.py`: Handles the three-tier memory database and knowledge graph.
+    * `npc_manager.py`: Contains the social AI logic for NPCs.
+    * `config.py`: Stores all prompts, plot points, and configurations.
+* `tests/`: Contains all the unit and integration tests.
+* `run_tests.py`: A convenient script to run the entire test suite.
 
 ## License
-This project is licensed under the MIT License — see `LICENSE`.
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.

@@ -30,6 +30,12 @@ class MemoryManager:
         tid = self._turn_counter
         self.rag.add_turn(tid, turn_text)
         return tid
+    
+    def _initialize_npcs(self):
+        """Adds the initial NPC data to the knowledge graph."""
+        for npc_name, attributes in config.INITIAL_NPC_STATES.items():
+            self.graph.add_node(npc_name, **attributes)
+        print("Initial NPC states loaded into graph.")
 
     def save_memory(self, turn_text, user_input=None):
         """Compatibility wrapper: create a turn and ensure deterministic facts from the turn/user_input are stored."""

@@ -12,21 +12,22 @@ WORKING_MEMORY_SIZE = 10
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 DB_COLLECTION_NAME = "episodic_memory"
 
-# --- Quest Configuration ---
-INITIAL_QUEST_ID = "The Lord's Summons"
+# --- Plot Point Configuration ---
+PLOT_POINTS = [
+    "MEET_MYSTERIOUS_STRANGER",
+    "GET_THE_QUEST",
+    "FIND_THE_HIDDEN_CAVE",
+    "CONFRONT_THE_GOBLIN_LEADER"
+]
 
 # --- D&D System Prompt & Rules ---
 GAME_SYSTEM_PROMPT = (
-    "You are a skilled Dungeon Master for a Dungeons & Dragons (D&D) fantasy game. "
-    "Your tone is descriptive and immersive. "
-    "1. **Describe the Scene:** Use sensory details. What does the player see, hear, and smell? "
-    "2. **Be Concise:** Keep descriptions to 2-5 sentences. "
-    "3. **Drive the Action:** ALWAYS end by asking 'What do you do?' and often present 2-3 clear, numbered choices. "
-    "4. **Use D&D Language:** Refer to actions as 'skill checks' and use D&D terminology. "
-    "5. **Adhere to Facts:** You will be given facts about the world and the player character. You MUST treat these as absolute truth."
+    "You are a skilled D&D Dungeon Master. Your primary goal is to guide the player through the story. "
+    "1. **Follow the Active Plot Point:** You will be given an 'Active Plot Point'. Your main job is to create a response that moves the story toward completing this goal. If the player does something unexpected, connect it back to the plot. "
+    "2. **Be Concise & Interactive:** Keep descriptions to 2-5 sentences and ALWAYS end by asking 'What do you do?' often with 2-3 numbered choices. "
+    "3. **Adhere to Facts:** You MUST treat all provided facts about the world and player as absolute truth."
 )
 
-# Simplified D&D rules for character creation and skill checks
 DND_RULES = {
     "classes": {
         "Fighter": {"modifier": "strength", "value": 3},

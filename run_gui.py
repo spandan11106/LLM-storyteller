@@ -2,7 +2,6 @@ import customtkinter as ctk
 import json
 import random
 
-# Import from your existing packages
 from storyteller.llm_client import client
 from storyteller.memory_manager import MemoryManager
 from storyteller import config
@@ -14,19 +13,28 @@ def determine_skill(user_input):
         for keyword in keywords:
             if keyword in user_input.lower():
                 return skill
-    return None # No specific skill found
+    return None
 
 def game_logic_thread(user_input, ui_queue):
     """Contains the core game logic and runs in a separate thread."""
     global memory_manager
     try:
+        # Smart Query: Check if the user is asking a direct question
+        if "?" in user_input:
+            intent_data = memory_manager._decompose_query_to_intent(user_input)
+            answer = memory_manager.find_answer_in_graph(intent_data)
+            if answer:
+                # If we found a direct answer, show it and bypass story generation
+                ui_queue.put(("dm_response", f"(From Memory): {answer}"))
+                return # End the turn here
+
         # D&D Skill Check System
         skill_to_check = determine_skill(user_input)
         if skill_to_check:
             roll = random.randint(1, 20)
-            player_class_info = memory_manager.knowledge_graph.get("Player", {}).get("properties", [])
+            player_props = memory_manager.knowledge_graph.get("Player", {}).get("properties", [])
             modifier = 0
-            for prop in player_class_info:
+            for prop in player_props:
                 if prop.get("property") == skill_to_check:
                     modifier = prop.get("value", 0)
             
@@ -39,14 +47,16 @@ def game_logic_thread(user_input, ui_queue):
         
         known_facts = []
         for entity in memory_manager.knowledge_graph.keys():
-            # Always include facts about the player
             if entity.lower() in user_input.lower() or entity == "Player":
                 facts = memory_manager.get_facts_about(entity)
                 if facts:
                     known_facts.append(f"Facts about {entity}: {json.dumps(facts)}")
         fact_context = "\n".join(known_facts)
 
-        prompt_context = f"Relevant Narrative Memories:\n{memory_context}\n\nKnown World Facts:\n{fact_context}\n\nContinue the story."
+        active_plot_point = memory_manager.get_active_plot_point()
+        plot_directive = f"Active Plot Point (Your Goal): {active_plot_point}" if active_plot_point else "No active plot point."
+
+        prompt_context = f"{plot_directive}\n\nRelevant Memories:\n{memory_context}\n\nKnown Facts:\n{fact_context}\n\nContinue the story."
         
         messages_for_api = [
             {"role": "system", "content": config.GAME_SYSTEM_PROMPT},
@@ -94,8 +104,6 @@ if __name__ == "__main__":
     memory_manager = MemoryManager()
     
     create_character(memory_manager)
-    
-    memory_manager.knowledge_graph["Quests"] = {config.INITIAL_QUEST_ID: "active"}
     
     app = ChatApp(game_logic_runner=game_logic_thread)
     app.start_game()

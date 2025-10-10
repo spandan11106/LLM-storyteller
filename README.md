@@ -24,6 +24,14 @@ This magical application is like having a brilliant storyteller living in your c
 
 </div>
 
+## 🎬 **Watch the Demo Video!**
+
+[![Watch the demo](https://img.shields.io/badge/Watch%20Demo%20Video-Click%20Here-blue?style=for-the-badge)](demo/Video/Video1.mp4)
+
+*See LLM Storyteller in action with a full walkthrough of the magical interface and features!* 
+
+---
+
 ## 🌟 What Makes This Adventure Special?
 
 🎨 **Beautiful & Intuitive Interface**: A gorgeous, modern design that feels like stepping into a fantasy tavern! Built with love using customtkinter, featuring a cozy chat window and a magical sidebar that shows your character's journey.

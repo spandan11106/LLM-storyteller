@@ -48,26 +48,51 @@ A graphical, AI-powered Dungeon Master and interactive story engine. This applic
     python main.py
     ```
 
-## How to Run Tests
+## Testing
 
-The project includes a comprehensive test suite to validate all core features. To run all tests and generate a detailed report, use the `run_tests.py` script:
+The project includes a comprehensive test suite that validates:
+- 🧠 **Memory System**: Including "needle in haystack" long-term memory tests
+- 😊 **NPC Emotions**: Relationship tracking and emotion consistency
+- 📖 **Story Consistency**: Character traits and narrative continuity  
+- ⚡ **Performance**: Response times and scalability
 
+### Run All Tests
 ```bash
-python run_tests.py
+source venv/bin/activate
+python run_tests.py all
 ```
+
+### Run Specific Test Suites
+```bash
+python run_tests.py memory      # Memory tests only
+python run_tests.py npc         # NPC emotion tests
+python run_tests.py story       # Story consistency tests
+python run_tests.py performance # Performance tests
+```
+
+See `tests/README.md` for detailed testing documentation.
 
 ## Project Structure
 
 * `main.py`: The main entry point to launch the graphical application.
-* `frontend/`: Contains the customtkinter UI code.
 * `storyteller/`: The core package containing all backend logic:
-    * `engine.py`: The main game loop and logic.
-    * `memory_manager.py`: Manages the overall memory state.
-    * `rag_manager.py`: Handles the three-tier memory database and knowledge graph.
-    * `npc_manager.py`: Contains the social AI logic for NPCs.
-    * `config.py`: Stores all prompts, plot points, and configurations.
-* `tests/`: Contains all the unit and integration tests.
-* `run_tests.py`: A convenient script to run the entire test suite.
+    * `core/`: Core engine components
+        * `engine.py`: Main storytelling orchestration
+        * `character.py`: Character data management
+        * `memory.py`: Long-term memory system with fact extraction
+        * `npc.py`: NPC emotion tracking and relationships
+    * `ui/`: User interface components
+        * `gui.py`: CustomTkinter-based GUI with sidebar design
+    * `utils/`: Utility modules
+        * `llm.py`: Groq LLM client wrapper
+    * `config.py`: Configuration and settings
+* `tests/`: Comprehensive test suite
+    * `test_memory.py`: Memory system tests including needle-in-haystack
+    * `test_npc_emotions.py`: NPC emotion and relationship tests
+    * `test_story_consistency.py`: Narrative coherence tests
+    * `test_performance.py`: Performance and scalability tests
+    * `run_all_tests.py`: Main test orchestrator
+* `run_tests.py`: Convenient test runner script
 
 ## License
 

@@ -1,0 +1,12 @@
+{
+  "name": "Memory Test Hero",
+  "background": "A mysterious adventurer.",
+  "personality": "Brave and curious.",
+  "goals": "To complete the quests.",
+  "attributes": {
+    "strength": 8,
+    "dexterity": 8,
+    "intelligence": 15,
+    "charisma": 15
+  }
+}

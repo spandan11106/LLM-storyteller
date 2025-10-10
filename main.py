@@ -1,57 +1,88 @@
-# main.py
+# main.py - Main entry point for the storytelling application
 
-import customtkinter as ctk
+"""
+AI Storyteller with Long-Term Memory
 
-from storyteller.memory_manager import MemoryManager
-from storyteller import config
-from storyteller.engine import game_logic_thread
-from frontend.app import ChatApp
+This is the main entry point for the storytelling application.
+You can run either the GUI or command-line version.
+"""
 
-def create_character_window(memory, app):
-    """Creates a top-level window for character creation."""
-    window = ctk.CTkToplevel(app)
-    window.title("Character Creation")
-    window.geometry("300x250")
+import sys
+import os
 
-    ctk.CTkLabel(window, text="Enter your character's name:").pack(pady=10)
-    name_entry = ctk.CTkEntry(window)
-    name_entry.pack(pady=5)
+# Add the current directory to the Python path
+sys.path.insert(0, os.path.dirname(__file__))
 
-    ctk.CTkLabel(window, text="Choose your class:").pack(pady=10)
-    class_var = ctk.StringVar(value="Fighter")
-    class_menu = ctk.CTkOptionMenu(window, variable=class_var, values=["Fighter", "Rogue", "Wizard"])
-    class_menu.pack(pady=5)
+from storyteller.ui.gui import run_gui
+from storyteller.core.engine import StorytellingEngine
 
-    def submit():
-        name = name_entry.get()
-        p_class = class_var.get()
-        if name and p_class:
-            class_info = config.DND_RULES["classes"][p_class]
+
+def run_cli():
+    """Run a simple command-line version"""
+    print("=== AI Storyteller CLI ===")
+    
+    engine = StorytellingEngine()
+    
+    # Check if character exists
+    if not engine.has_character():
+        print("\nNo character found. Let's create one!")
+        name = input("Character name: ")
+        background = input("Background: ")
+        personality = input("Personality: ")
+        goals = input("Goals: ")
+        
+        print("\nAttributes (press enter for default 10):")
+        try:
+            strength = int(input("Strength [10]: ") or "10")
+            dexterity = int(input("Dexterity [10]: ") or "10")
+            intelligence = int(input("Intelligence [10]: ") or "10")
+            charisma = int(input("Charisma [10]: ") or "10")
+        except ValueError:
+            strength = dexterity = intelligence = charisma = 10
+        
+        result = engine.create_character(
+            name, background, personality, goals,
+            strength=strength, dexterity=dexterity,
+            intelligence=intelligence, charisma=charisma
+        )
+        print(f"\n{result}")
+    
+    # Start adventure
+    if not engine.game_started:
+        print("\nStarting adventure...")
+        intro = engine.start_adventure()
+        print(f"\nDM: {intro}")
+    
+    # Main game loop
+    print("\n" + "="*50)
+    print("Adventure begins! Type 'quit' to exit.")
+    print("="*50)
+    
+    while True:
+        try:
+            action = input("\nWhat do you do? ").strip()
+            if action.lower() in ['quit', 'exit', 'q']:
+                break
             
-            # --- UPDATED: Removed inventory from initial attributes ---
-            attributes = {
-                "name": name,
-                "class": p_class,
-                "type": "player",
-                class_info["modifier"]: class_info["value"],
-                "state": "Healthy"
-            }
-            memory.graph.add_node("Player", **attributes)
-            
-            app.ui_queue.put(("update_char_info", attributes))
-            
-            app.display_message(f"Welcome, {name} the {p_class}! Your adventure begins...\n\n", "dm")
-            window.destroy()
+            if action:
+                response = engine.process_player_action(action)
+                print(f"\nDM: {response}")
+        
+        except KeyboardInterrupt:
+            break
+        except Exception as e:
+            print(f"Error: {e}")
+    
+    print("\nThanks for playing!")
 
-    submit_button = ctk.CTkButton(window, text="Submit", command=submit)
-    submit_button.pack(pady=15)
+
+def main():
+    """Main function"""
+    if len(sys.argv) > 1 and sys.argv[1] == '--cli':
+        run_cli()
+    else:
+        run_gui()
+
 
 if __name__ == "__main__":
-    ctk.set_appearance_mode("dark")
-    
-    memory_manager = MemoryManager()
-    
-    app = ChatApp(game_logic_runner=game_logic_thread, memory_manager=memory_manager)
-    create_character_window(memory_manager, app)
-    app.start_game()
-    app.mainloop()
+    main()

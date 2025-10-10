@@ -1,11 +1,27 @@
+# 🚫 Things We Don't Want in Our Adventure Repository! 🚫
+# (These files should stay on your local computer, not in the shared codebase)
+
+# 🐍 Python virtual environment (everyone creates their own)
 venv/
+
+# 🔐 Secret API keys (keep these safe and private!)
 .env
+
+# 🗂️ Python compilation files (auto-generated)
 __pycache__/
 *.pyc
+
+# 💻 Operating system files
 .DS_Store
+
+# 🧠 Database files (created during adventures)
 chromadb-*
+
+# 🛠️ Development tool caches
 /.mypy_cache
 /.pytest_cache
 /.vscode/
+
+# 📦 Build and distribution files
 dist/
 build/

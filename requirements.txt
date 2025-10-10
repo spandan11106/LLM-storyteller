@@ -1,5 +1,17 @@
+# 🎭 Welcome to Your Adventure Dependencies! 🎭
+# These magical ingredients power your AI Dungeon Master experience
+
+# 🧠 The brilliant AI brain that powers your storytelling adventures
 groq
+
+# 🔐 Keeps your API key safe and secure (like a magical vault!)
 python-dotenv
+
+# 🎨 Creates the beautiful, modern interface you'll love using
 customtkinter
+
+# 🕸️ Helps track relationships between all your story characters
 networkx
+
+# 🔍 The secret sauce for understanding context and meaning in conversations
 sentence-transformers

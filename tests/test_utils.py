@@ -1,6 +1,14 @@
-# tests/test_utils.py
+# 🛠️ Magical Testing Toolkit! ✨
 """
-Utility functions and fixtures for testing
+🎪 Your friendly collection of testing helpers and magical utilities!
+
+This toolkit provides everything you need to create amazing tests:
+- 🏗️ Test environment setup and cleanup magic
+- 🎭 Helper functions for creating test characters
+- 🧠 Memory testing utilities (including the famous needle-in-haystack!)
+- 🔍 Result analysis and reporting spells
+
+Think of this as your trusty sidekick for all testing adventures! 🌟
 """
 
 import os
@@ -16,7 +24,7 @@ from storyteller.core.character import Character
 
 
 class TestSetup:
-    """Setup and teardown utilities for tests"""
+    """🏗️ Your magical test environment constructor and cleaner-upper!"""
     
     def __init__(self):
         self.temp_dir = None
@@ -24,22 +32,22 @@ class TestSetup:
         self.engine = None
     
     def setup_test_environment(self):
-        """Setup isolated test environment"""
-        # Create temporary directory for test memory
+        """🎪 Set up a completely isolated test playground!"""
+        # Create a cozy temporary directory for test memories
         self.temp_dir = tempfile.mkdtemp(prefix="storyteller_test_")
         
-        # Store original memory path
+        # Safely store the original memory path so we can restore it later
         from storyteller import config
         self.original_memory_path = config.MEMORY_SAVE_PATH
         config.MEMORY_SAVE_PATH = self.temp_dir
         
-        # Create fresh engine
+        # Create a fresh, pristine storytelling engine just for testing!
         self.engine = StorytellingEngine()
         
         return self.engine
     
     def teardown_test_environment(self):
-        """Clean up test environment"""
+        """🧹 Clean up our test playground and restore everything perfectly!"""
         if self.temp_dir and os.path.exists(self.temp_dir):
             shutil.rmtree(self.temp_dir)
         
@@ -48,7 +56,7 @@ class TestSetup:
             config.MEMORY_SAVE_PATH = self.original_memory_path
     
     def create_test_character(self, name="TestHero", **kwargs) -> Character:
-        """Create a standard test character"""
+        """🎭 Create a perfectly heroic test character for our adventures!"""
         defaults = {
             'background': 'A brave adventurer seeking glory and treasure.',
             'personality': 'Courageous, curious, and kind-hearted.',
@@ -65,22 +73,24 @@ class TestSetup:
 
 
 class MemoryTestHelper:
-    """Helper for memory-related testing"""
+    """🧠 Your specialist helper for testing the legendary memory palace!"""
     
     @staticmethod
     def create_haystack_conversations(engine: StorytellingEngine, 
                                     needle_info: str, 
                                     haystack_size: int = 50) -> int:
         """
-        Create a haystack of conversations with a needle of important information
-        Returns the conversation number where the needle was inserted
+        🔍 Create the famous needle-in-haystack test! 
+        Builds a mountain of conversations and hides important info somewhere inside.
+        Returns the conversation number where the needle was secretly inserted.
         """
-        # Start adventure first
+        # Start the adventure magic first!
         engine.start_adventure()
         
-        # Insert needle conversation at a random position (not too early or late)
+        # Hide the needle somewhere in the middle (not too obvious!)
         needle_position = haystack_size // 3 + (haystack_size // 6)
         
+        # Collection of typical adventurer actions for building our haystack
         filler_actions = [
             "I look around the room carefully.",
             "I check my equipment and inventory.",
@@ -101,14 +111,14 @@ class MemoryTestHelper:
         
         for i in range(haystack_size):
             if i == needle_position:
-                # Insert the needle - important information
+                # 💎 Insert the precious needle - this is our important information!
                 response = engine.process_player_action(needle_info)
             else:
-                # Insert filler conversation
+                # 🌾 Insert regular haystack conversation
                 action = filler_actions[i % len(filler_actions)]
                 response = engine.process_player_action(action)
             
-            # Add small delay to ensure different timestamps
+            # Add a tiny pause to ensure each conversation has a unique timestamp
             time.sleep(0.01)
         
         return needle_position
@@ -117,18 +127,19 @@ class MemoryTestHelper:
     def extract_needle_from_memory(engine: StorytellingEngine, 
                                  needle_keywords: List[str]) -> List[str]:
         """
-        Try to extract the needle information from memory using various retrieval methods
+        🔍 Try to find our hidden needle using every trick in the book!
+        Tests multiple search strategies to see if the memory palace is truly legendary.
         """
         found_memories = []
         
-        # Method 1: Direct keyword search
+        # 🎯 Method 1: Direct keyword hunting (the obvious approach)
         for keyword in needle_keywords:
             memories = engine.memory.retrieve_relevant_memories(keyword, max_results=5)
             for memory in memories:
                 if any(kw.lower() in memory.lower() for kw in needle_keywords):
                     found_memories.append(memory)
         
-        # Method 2: Semantic search if available
+        # 🧠 Method 2: Smart semantic search (understanding meaning, not just words)
         try:
             semantic_query = ' '.join(needle_keywords)
             semantic_memories = engine.memory.retrieve_relevant_memories(semantic_query, max_results=10)
@@ -136,31 +147,32 @@ class MemoryTestHelper:
                 if any(kw.lower() in memory.lower() for kw in needle_keywords):
                     found_memories.append(memory)
         except Exception:
+            # No worries if semantic search isn't available
             pass
         
-        return list(set(found_memories))  # Remove duplicates
+        return list(set(found_memories))  # Remove duplicates and return our treasure hunt results!
 
 
 class StoryConsistencyTester:
-    """Test story consistency and coherence"""
+    """📖 Your specialist for testing epic story consistency and flow!"""
     
     @staticmethod
     def test_character_consistency(engine: StorytellingEngine, 
                                  interactions: List[str]) -> Dict[str, Any]:
-        """Test if character traits remain consistent across interactions"""
+        """🎭 Test if character traits stay true across the entire adventure!"""
         character_info = engine.get_character_info()
         responses = []
         
         for interaction in interactions:
             response = engine.process_player_action(interaction)
             responses.append(response)
-            time.sleep(0.01)
+            time.sleep(0.01)  # Give the AI a moment to think
         
-        # Analyze responses for character consistency
+        # 🔍 Analyze responses to see if character personality shines through consistently
         character_mentions = []
         for response in responses:
             response_lower = response.lower()
-            # Check for mentions of character traits
+            # Check if the character's personality comes through in the responses
             if character_info['personality'].lower() in response_lower:
                 character_mentions.append('personality')
             if any(goal.lower() in response_lower for goal in character_info['goals'].split()):
@@ -174,14 +186,15 @@ class StoryConsistencyTester:
 
 
 class NPCEmotionTester:
-    """Test NPC emotion tracking and consistency"""
+    """💝 Your specialist for testing NPC hearts, emotions, and relationship magic!"""
     
     @staticmethod
     def test_npc_emotion_progression(engine: StorytellingEngine, 
                                    npc_interactions: List[Dict[str, str]]) -> Dict[str, Any]:
         """
-        Test NPC emotion progression through various interactions
+        💕 Test how NPC emotions grow and change through various interactions!
         npc_interactions: [{'action': '...', 'expected_tone': 'positive/negative/neutral'}]
+        This tests if NPCs actually remember how you treat them and respond accordingly!
         """
         initial_npcs = engine.get_npc_states()
         emotion_progression = []
@@ -197,7 +210,7 @@ class NPCEmotionTester:
                 'npc_states': current_npcs.copy()
             })
             
-            time.sleep(0.01)
+            time.sleep(0.01)  # Let emotions process naturally
         
         return {
             'initial_npcs': initial_npcs,
@@ -207,13 +220,13 @@ class NPCEmotionTester:
 
 
 class PerformanceTester:
-    """Test performance and timing"""
+    """⚡ Your speed demon for testing lightning-fast performance!"""
     
     @staticmethod
     def measure_response_time(engine: StorytellingEngine, 
                             action: str, 
                             iterations: int = 5) -> Dict[str, float]:
-        """Measure response time for actions"""
+        """⏱️ Measure how fast our AI responds to actions (should be snappy!)"""
         times = []
         
         for _ in range(iterations):
@@ -222,7 +235,7 @@ class PerformanceTester:
             end_time = time.time()
             
             times.append(end_time - start_time)
-            time.sleep(0.1)  # Small delay between iterations
+            time.sleep(0.1)  # Brief pause between speed tests
         
         return {
             'times': times,
@@ -233,18 +246,17 @@ class PerformanceTester:
     
     @staticmethod
     def measure_memory_operations(engine: StorytellingEngine) -> Dict[str, float]:
-        """Measure memory operation performance"""
-        # Test memory save
+        """💾 Test how efficiently our memory palace operates!"""
         start_time = time.time()
         engine.memory.add_conversation_turn("Test action", "Test response")
         save_time = time.time() - start_time
         
-        # Test memory search
+        # Test memory search speed
         start_time = time.time()
         results = engine.memory.retrieve_relevant_memories("test", max_results=5)
         search_time = time.time() - start_time
         
-        # Test fact extraction
+        # Test fact extraction speed 
         start_time = time.time()
         facts = engine.memory.extract_facts("The brave knight fought the dragon.")
         extraction_time = time.time() - start_time
@@ -258,7 +270,7 @@ class PerformanceTester:
 
 
 def run_test_safely(test_func, *args, **kwargs):
-    """Run a test function safely with error handling"""
+    """🛡️ Run a test function with magical error protection and helpful reporting!"""
     try:
         return {
             'success': True,

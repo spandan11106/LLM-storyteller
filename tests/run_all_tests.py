@@ -1,6 +1,14 @@
-# tests/run_all_tests.py
+# 🎪 Grand Test Conductor - The Ultimate Testing Adventure! ✨
 """
-Main test runner that executes all test suites and generates comprehensive reports
+🎭 Your magical test orchestrator that runs ALL the amazing tests and creates beautiful reports!
+
+This is the grand finale of our testing suite - it conducts the entire symphony of tests:
+- 🧠 Memory palace challenges (including the famous needle-in-haystack!)
+- 💝 NPC heart and emotion tests
+- 📖 Epic story consistency verification  
+- ⚡ Lightning-fast performance benchmarks
+
+Watch as it creates detailed reports showing exactly how legendary your AI storyteller is! 🌟
 """
 
 import json
@@ -15,11 +23,11 @@ from .test_performance import run_performance_tests
 
 
 class TestReportGenerator:
-    """Generate comprehensive test reports"""
+    """📊 Your magical report wizard that creates beautiful test summaries!"""
     
     @staticmethod
     def generate_summary_report(all_results: Dict[str, Any]) -> Dict[str, Any]:
-        """Generate summary statistics across all test suites"""
+        """✨ Generate a magnificent overview of all your test adventures!"""
         summary = {
             'total_tests': 0,
             'passed_tests': 0,

@@ -1,0 +1,12 @@
+{
+  "name": "Dio",
+  "background": "A mysterious adventurer.",
+  "personality": "Brave and curious.",
+  "goals": "To complete the quests.",
+  "attributes": {
+    "strength": 10,
+    "dexterity": 10,
+    "intelligence": 14,
+    "charisma": 16
+  }
+}

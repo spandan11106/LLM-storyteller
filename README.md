@@ -6,7 +6,23 @@ Ever dreamed of having your very own Dungeon Master who never forgets a detail, 
 
 This magical application is like having a brilliant storyteller living in your computer - one who uses cutting-edge AI to weave incredible tales just for you. Whether you're a seasoned adventurer or completely new to storytelling games, this friendly AI will guide you through unforgettable journeys! 🗺️
 
-*📸 (Perfect spot for a screenshot of your amazing adventures!)*
+## 📸 **See the Magic in Action!** ✨
+
+<div align="center">
+
+### 🎮 **Beautiful GUI Interface**
+![LLM Storyteller GUI](demo/Photos/3.png)
+*Experience storytelling through our gorgeous, modern interface with character tracking and immersive chat!*
+
+### 🧠 **Memory System in Action** 
+![Memory System Demo](demo/Photos/2.png)
+*Watch as our legendary memory palace remembers every detail of your adventure!*
+
+### 🎭 **Character & NPC Management**
+![Character Management](demo/Photos/1.png)
+*Create amazing characters and watch NPCs come to life with real emotions and relationships!*
+
+</div>
 
 ## 🌟 What Makes This Adventure Special?
 

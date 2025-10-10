@@ -128,12 +128,38 @@ class StorytellerGUI(ctk.CTk):
         self.textbox = ctk.CTkTextbox(self.chat_frame, state="disabled", wrap="word", font=("Arial", 14))
         self.textbox.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
         
-        # Configure text colors for different speakers
-        self.textbox.tag_config("player", foreground="#4FC3F7")  # Light blue for player
-        self.textbox.tag_config("dm", foreground="#81C784")      # Light green for DM
-        self.textbox.tag_config("instructions", foreground="#FFB74D")  # Orange for instructions
-        self.textbox.tag_config("quest_name", foreground="#F06292")     # Pink for quest names
-        self.textbox.tag_config("error", foreground="#E57373")          # Red for errors
+        # Store the textbox for easier access to underlying widget
+        self.text_widget = None
+        
+        # Configure text colors after the widget is created
+        def setup_colors():
+            try:
+                # Try different methods to access the underlying text widget
+                if hasattr(self.textbox, '_textbox'):
+                    self.text_widget = self.textbox._textbox
+                elif hasattr(self.textbox, 'textbox'):
+                    self.text_widget = self.textbox.textbox
+                else:
+                    # Search for Text widget in children
+                    for child in self.textbox.winfo_children():
+                        if child.winfo_class() == 'Text':
+                            self.text_widget = child
+                            break
+                
+                if self.text_widget:
+                    self.text_widget.tag_config("player", foreground="#00BFFF")     # Bright blue for player
+                    self.text_widget.tag_config("dm", foreground="#32CD32")         # Lime green for DM
+                    self.text_widget.tag_config("instructions", foreground="#FFA500")  # Orange for instructions
+                    self.text_widget.tag_config("quest_name", foreground="#FF69B4")    # Hot pink for quest names
+                    self.text_widget.tag_config("error", foreground="#FF4444")         # Bright red for errors
+                    print("✨ Color tags configured successfully!")
+                else:
+                    print("⚠️ Could not find underlying text widget")
+            except Exception as e:
+                print(f"⚠️ Could not configure text colors: {e}")
+        
+        # Schedule color setup after widget is fully initialized
+        self.after(100, setup_colors)
         
         # Input area
         self.input_frame = ctk.CTkFrame(self)
@@ -277,8 +303,9 @@ class StorytellerGUI(ctk.CTk):
         self.send_button.configure(state="disabled")
         self.show_status("DM is thinking...")
         
-        # Add player message to display with nice formatting
-        self.display_message(f"⚔️ You: {message}\n\n", "player")
+        # Add player message to display with nice formatting and visual distinction
+        player_prefix = "🔵 YOU: "  # Blue circle to indicate player
+        self.display_message(f"{player_prefix}{message}\n\n", "player")
         
         def process_thread():
             try:
@@ -294,14 +321,19 @@ class StorytellerGUI(ctk.CTk):
         """✨ Display a message in the chat with beautiful colors!"""
         self.textbox.configure(state="normal")
         
-        if tag:
-            # Insert with color tag for different speakers
-            start_pos = self.textbox.index("end")
-            self.textbox.insert("end", message)
-            end_pos = self.textbox.index("end")
-            self.textbox.tag_add(tag, start_pos, end_pos)
+        if tag and self.text_widget:
+            try:
+                # Insert with color tag for different speakers using the underlying text widget
+                start_pos = self.text_widget.index("end-1c")  # Get position before inserting
+                self.textbox.insert("end", message)
+                end_pos = self.text_widget.index("end-1c")    # Get position after inserting
+                self.text_widget.tag_add(tag, start_pos, end_pos)  # Apply color tag
+            except Exception as e:
+                print(f"⚠️ Color tagging failed, using default: {e}")
+                # Fallback: just insert without color
+                self.textbox.insert("end", message)
         else:
-            # Default white text
+            # Default text (no color or no text widget found)
             self.textbox.insert("end", message)
             
         self.textbox.see("end")
@@ -324,7 +356,8 @@ class StorytellerGUI(ctk.CTk):
                 message_type, content = self.ui_queue.get_nowait()
                 
                 if message_type == "dm_response":
-                    self.display_message(f"🧙‍♂️ DM: {content}\n\n", "dm")
+                    dm_prefix = "🟢 DM: "  # Green circle to indicate DM
+                    self.display_message(f"{dm_prefix}{content}\n\n", "dm")
                     self.hide_status()
                 elif message_type == "adventure_started":
                     self.adventure_started = True

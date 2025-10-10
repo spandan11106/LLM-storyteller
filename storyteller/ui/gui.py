@@ -1,6 +1,10 @@
 # storyteller/ui/gui.py
 """
-CustomTkinter GUI for the storytelling application (similar to previous design)
+🎨 Your Beautiful Adventure Interface - Where Magic Meets User-Friendly Design!
+
+This is the gorgeous graphical interface that makes interacting with your AI
+storyteller feel like playing the most amazing adventure game ever created!
+Think of it as your personal adventure cockpit with all the controls you need.
 """
 
 import customtkinter as ctk
@@ -15,37 +19,42 @@ from ..config import GUI_WINDOW_SIZE, GUI_TITLE
 
 
 class StorytellerGUI(ctk.CTk):
+    """🖼️ Your Amazing Adventure Interface - Beautiful, Intuitive, and Fun!"""
+    
     def show_game_instructions(self):
-        """Display DM instructions in the main chat area"""
+        """📜 Share the exciting game instructions with our adventurer!"""
         instructions = (
-            "Welcome to the AI Storyteller!\n\n"
-            "You are about to embark on a journey through 15 epic quests, traveling into history and the future.\n"
-            "Each quest is tougher than the last. You can do anything you want, but your actions have consequences.\n"
-            "There are up to 5 possible endings depending on your choices.\n\n"
-            "How to play:\n"
-            "- Type your actions in the input box.\n"
-            "- Interact with NPCs, explore, fight, and make decisions.\n"
-            "- At the start of each quest, you will see pixel art related to the quest.\n"
-            "- If a quest involves dragons, you'll see a fire-breathing dragon in pixel art!\n"
-            "- The DM will guide you, but you are free to shape your own story.\n"
-            "- Good luck, hero!\n"
+            "🎉 Welcome to Your Amazing AI Storytelling Adventure!\n\n"
+            "Get ready for an incredible journey through 15 epic quests that will take you "
+            "through ancient mysteries, medieval legends, and futuristic worlds!\n"
+            "Each quest gets more challenging and exciting than the last. You have the power "
+            "to do anything you can imagine, but remember - every choice shapes your destiny!\n"
+            "There are up to 5 different endings waiting for you based on the paths you choose.\n\n"
+            "🎮 How to Play and Have Amazing Adventures:\n"
+            "- Simply type what you want to do in the input box below\n"
+            "- Chat with fascinating characters, explore mysterious places, engage in epic battles\n"
+            "- Make important decisions that will determine your hero's fate\n"
+            "- At the start of each quest, you'll see beautiful pixel art that sets the scene\n"
+            "- When dragons appear, you'll see incredible fire-breathing pixel art!\n"
+            "- Your AI Dungeon Master will guide you, but YOU control your own epic story\n"
+            "- Most importantly: Have fun and let your imagination run wild!\n"
+            "\n🌟 Your adventure awaits, brave hero!\n"
         )
-        self.display_message(f"[Instructions]\n{instructions}\n\n", tag="instructions")
-    """Main GUI application with sidebar design like the previous version"""
+        self.display_message(f"[🎭 Game Guide]\n{instructions}\n\n", tag="instructions")
     
     def __init__(self):
         import os
-        # Always reset character on startup
+        # Start fresh with each new adventure session
         char_file = os.path.join("memory_docs", "character.json")
         if os.path.exists(char_file):
             try:
-                os.remove(char_file)
+                os.remove(char_file)  # Clean slate for new adventures
             except Exception:
                 pass
         super().__init__()
         self.title(GUI_TITLE)
         self.geometry("1200x800")
-        # Set appearance
+        # Make it look absolutely amazing
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("blue")
         # Initialize the storytelling engine
@@ -115,9 +124,16 @@ class StorytellerGUI(ctk.CTk):
         self.chat_frame.grid_rowconfigure(0, weight=1)
         self.chat_frame.grid_columnconfigure(0, weight=1)
         
-        # Chat display
+        # Chat display with colored text support
         self.textbox = ctk.CTkTextbox(self.chat_frame, state="disabled", wrap="word", font=("Arial", 14))
         self.textbox.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+        
+        # Configure text colors for different speakers
+        self.textbox.tag_config("player", foreground="#4FC3F7")  # Light blue for player
+        self.textbox.tag_config("dm", foreground="#81C784")      # Light green for DM
+        self.textbox.tag_config("instructions", foreground="#FFB74D")  # Orange for instructions
+        self.textbox.tag_config("quest_name", foreground="#F06292")     # Pink for quest names
+        self.textbox.tag_config("error", foreground="#E57373")          # Red for errors
         
         # Input area
         self.input_frame = ctk.CTkFrame(self)
@@ -261,8 +277,8 @@ class StorytellerGUI(ctk.CTk):
         self.send_button.configure(state="disabled")
         self.show_status("DM is thinking...")
         
-        # Add player message to display
-        self.display_message(f"You: {message}\n\n", "player")
+        # Add player message to display with nice formatting
+        self.display_message(f"⚔️ You: {message}\n\n", "player")
         
         def process_thread():
             try:
@@ -275,9 +291,19 @@ class StorytellerGUI(ctk.CTk):
         Thread(target=process_thread, daemon=True).start()
     
     def display_message(self, message, tag=""):
-        """Display a message in the chat"""
+        """✨ Display a message in the chat with beautiful colors!"""
         self.textbox.configure(state="normal")
-        self.textbox.insert("end", message)
+        
+        if tag:
+            # Insert with color tag for different speakers
+            start_pos = self.textbox.index("end")
+            self.textbox.insert("end", message)
+            end_pos = self.textbox.index("end")
+            self.textbox.tag_add(tag, start_pos, end_pos)
+        else:
+            # Default white text
+            self.textbox.insert("end", message)
+            
         self.textbox.see("end")
         self.textbox.configure(state="disabled")
     
@@ -298,7 +324,7 @@ class StorytellerGUI(ctk.CTk):
                 message_type, content = self.ui_queue.get_nowait()
                 
                 if message_type == "dm_response":
-                    self.display_message(f"DM: {content}\n\n")
+                    self.display_message(f"🧙‍♂️ DM: {content}\n\n", "dm")
                     self.hide_status()
                 elif message_type == "adventure_started":
                     self.adventure_started = True
@@ -310,6 +336,8 @@ class StorytellerGUI(ctk.CTk):
                     self._update_npc_info(current_npc_states)
                     self._update_memory_info()
                 elif message_type == "error":
+                    # Show error in chat as well as popup
+                    self.display_message(f"⚠️ Error: {content}\n\n", "error")
                     messagebox.showerror("Error", content)
                     self.hide_status()
                     if not self.adventure_started:

@@ -1,6 +1,10 @@
 # storyteller/utils/llm.py
 """
-LLM client wrapper for API calls
+🤖 The AI Communication Hub - Where We Chat with Our Smart Storytelling Friend!
+
+This is the bridge between our storytelling system and the incredibly smart AI
+that generates all the amazing stories, characters, and plot twists. Think of
+it as a translator that helps us have amazing conversations with our AI buddy!
 """
 
 import json
@@ -9,46 +13,49 @@ from typing import List, Dict, Any, Optional
 
 from ..config import LLM_MODEL, GROQ_API_KEY
 
-# Try to import groq
+# Let's see if we have our AI communication tools ready!
 try:
     from groq import Groq, DefaultHttpxClient
     HAS_GROQ = True
+    print("🎉 AI communication tools are ready!")
 except ImportError:
     HAS_GROQ = False
+    print("📝 Note: Install groq package for AI storytelling features")
 
 
 class LLMClient:
-    """Wrapper for LLM API calls with error handling"""
+    """🌟 Your Personal AI Storytelling Assistant - Ready to Create Magic!"""
     
     def __init__(self):
         self.model = LLM_MODEL
         self.client = None
         
         if HAS_GROQ and GROQ_API_KEY:
-            # Create a custom httpx client with sensible timeouts and retries
-            timeout = httpx.Timeout(30.0, connect=10.0)
-            transport = httpx.HTTPTransport(retries=3)
+            # Set up a reliable connection to our AI friend
+            timeout = httpx.Timeout(30.0, connect=10.0)  # Give it time to think of great stories
+            transport = httpx.HTTPTransport(retries=3)    # Try again if connection hiccups
             
             custom_httpx_client = DefaultHttpxClient(
                 timeout=timeout,
                 transport=transport,
             )
             
-            # Initialize the Groq client
+            # Connect to our amazing AI storyteller
             self.client = Groq(
                 api_key=GROQ_API_KEY,
                 http_client=custom_httpx_client,
             )
-            print("Initialized LLM client successfully")
+            print("🚀 Connected to AI storyteller - ready for epic adventures!")
         else:
-            print("Warning: Groq client not available (missing groq package or API key)")
+            print("⚠️ AI storyteller needs a connection key - add your GROQ_API_KEY!")
     
     def generate_text(self, messages: List[Dict[str, str]], **kwargs) -> Optional[str]:
-        """Generate text using the LLM"""
+        """💬 Have an amazing conversation with our AI storytelling friend!"""
         if not self.client:
-            return "LLM client not available - please check your Groq API key and dependencies"
+            return "🤖 AI storyteller is taking a nap - please check your connection and API key!"
         
         try:
+            # Ask our AI friend to weave some storytelling magic!
             response = self.client.chat.completions.create(
                 messages=messages,
                 model=self.model,
@@ -56,42 +63,42 @@ class LLMClient:
             )
             return response.choices[0].message.content.strip()
         except Exception as e:
-            return f"Error generating text: {e}"
+            return f"🤖 AI storyteller encountered an issue: {e}"
     
     def generate_story_intro(self, character_info: str) -> str:
-        """Generate an opening story based on character"""
-        prompt = f"""You are a Dungeon Master starting a new adventure. Create an engaging opening scene for:
+        """🌟 Create an amazing opening scene for your hero's first adventure!"""
+        prompt = f"""You are the most amazing Dungeon Master ever, starting a brand new adventure! Create an engaging, exciting opening scene for this incredible hero:
 
 {character_info}
 
-Provide a rich, immersive opening that sets up the adventure and gives the player meaningful choices.
-Respond with only the narrative text - no JSON, just the story."""
+Make it immersive, exciting, and full of possibilities! Give the player some really interesting choices to make.
+Just tell the story - no technical stuff, just pure storytelling magic!"""
         
         messages = [{"role": "user", "content": prompt}]
-        return self.generate_text(messages) or "Welcome to your adventure! You find yourself at the entrance to a mysterious tavern, with sounds of laughter and adventure calling from within."
+        return self.generate_text(messages) or "🏰 Welcome to your amazing adventure! You find yourself at the entrance to a mysterious tavern, with sounds of laughter and adventure calling from within. The wooden sign creaks in the wind, and you can smell fresh bread and hear tales of distant lands. What would you like to do?"
     
     def continue_story(self, character_info: str, memory_context: str, recent_context: str, player_action: str) -> str:
-        """Continue the story based on player action and context"""
-        prompt = f"""You are an expert Dungeon Master continuing an ongoing adventure. 
+        """📖 Continue the epic story based on what your hero chooses to do!"""
+        prompt = f"""You are the best Dungeon Master in the world, continuing an amazing ongoing adventure! 
 
-CHARACTER:
+OUR HERO:
 {character_info}
 
-RECENT CONVERSATION:
+WHAT JUST HAPPENED:
 {recent_context}
 
-RELEVANT PAST EVENTS:
+IMPORTANT THINGS TO REMEMBER:
 {memory_context}
 
-CURRENT PLAYER ACTION: {player_action}
+WHAT THE HERO DOES NOW: {player_action}
 
-Continue the story based on the player's action. Consider their character, the recent context, and relevant past events. Make the story engaging, consistent, and give the player meaningful choices.
+Continue this epic story! Remember everything that happened before, make it exciting and consistent, and give our hero some great choices for what to do next.
 
-Respond with only the narrative text - no JSON, just the story continuation."""
+Just tell the amazing story - pure narrative magic, no technical stuff!"""
         
         messages = [{"role": "user", "content": prompt}]
-        return self.generate_text(messages) or "The story continues as you take action, the world responding to your choices..."
+        return self.generate_text(messages) or "🌟 The story continues as you take action, with the world responding to your choices in amazing ways..."
 
 
-# Global client instance
+# 🌟 Our amazing AI storytelling friend - ready whenever you need epic stories!
 llm_client = LLMClient()

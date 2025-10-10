@@ -1,21 +1,26 @@
 # storyteller/__init__.py
 """
-AI Storyteller with Long-Term Memory
+🧙‍♂️ Your Personal AI Storyteller with Amazing Memory!
 
-A sophisticated storytelling system that creates immersive adventures
-with persistent character memory across multiple sessions.
+Hey there, adventurer! Welcome to the most incredible storytelling system
+you've ever encountered. This isn't just any ordinary AI - it actually 
+remembers everything that happens in your adventures, creating truly 
+immersive experiences that continue to grow and evolve!
+
+Think of it as having your own personal dungeon master who never forgets
+a single detail of your epic journey. Pretty cool, right?
 """
 
 __version__ = "1.0.0"
-__author__ = "Spandan"
+__author__ = "Spandan - The Memory Magic Creator"
 
 from .core.engine import StorytellingEngine
 from .core.character import Character
 from .core.memory import DocumentMemorySystem
 
-# Convenience imports for easy access
+# Quick and easy way to get started with your adventure!
 def create_engine():
-    """Create a new storytelling engine instance"""
+    """Fire up a brand new storytelling adventure - let the magic begin!"""
     return StorytellingEngine()
 
 __all__ = [

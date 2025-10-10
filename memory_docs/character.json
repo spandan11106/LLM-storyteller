@@ -1,12 +1,12 @@
 {
-  "name": "Memory Test Hero",
+  "name": "Dio",
   "background": "A mysterious adventurer.",
   "personality": "Brave and curious.",
   "goals": "To complete the quests.",
   "attributes": {
-    "strength": 8,
+    "strength": 13,
     "dexterity": 8,
-    "intelligence": 15,
+    "intelligence": 10,
     "charisma": 15
   }
 }

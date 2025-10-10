@@ -1,6 +1,13 @@
 # storyteller/core/engine.py
 """
-Main storytelling engine that orchestrates character creation, memory, and story generation
+🎭 The Heart of Adventure - Your Personal Story Master!
+
+This is where all the magic comes together! Think of this as your personal
+dungeon master who never gets tired, always remembers every detail, and 
+creates amazing adventures tailored just for you.
+
+This engine combines character creation, memory management, and AI storytelling
+to create truly immersive experiences that grow and evolve with every session!
 """
 
 import json
@@ -13,15 +20,17 @@ from ..utils.llm import llm_client
 
 
 class StorytellingEngine:
+    """🎪 Your Amazing Adventure Engine - Where Stories Come to Life!"""
+    
     def get_plot(self):
-        """Return the plot structure: 15 quests, each tougher, with time travel and multiple endings"""
+        """🗺️ Get the epic quest structure: 15 amazing adventures that get progressively more challenging!"""
         quests = []
         for i in range(1, 16):
-            theme = "Ancient" if i <= 5 else "Future" if i >= 11 else "Medieval"
+            theme = "Ancient Mysteries" if i <= 5 else "Future Worlds" if i >= 11 else "Medieval Legends"
             quest_type = "dragon" if i == 3 or i == 10 else "artifact" if i % 4 == 0 else "battle"
             quests.append({
                 "number": i,
-                "title": f"Quest {i}: {'Battle with a Fire Dragon' if quest_type == 'dragon' else 'Retrieve the Lost Artifact' if quest_type == 'artifact' else 'Epic Battle'}",
+                "title": f"Quest {i}: {'Epic Dragon Battle' if quest_type == 'dragon' else 'Hunt for Lost Artifacts' if quest_type == 'artifact' else 'Legendary Battle'}",
                 "theme": theme,
                 "difficulty": i,
                 "art": "dragon" if quest_type == "dragon" else "artifact" if quest_type == "artifact" else "battle"
@@ -29,42 +38,41 @@ class StorytellingEngine:
         return quests
 
     def get_possible_endings(self):
-        """Return possible endings based on choices (5 endings)"""
+        """🏆 Discover the possible ways your epic story could conclude!"""
         return [
-            "Hero becomes a legend in history.",
-            "Hero is lost in time, never to return.",
-            "Hero rules the future as a wise leader.",
-            "Hero sacrifices themselves to save the world.",
-            "Hero retires peacefully, having changed the course of history."
+            "You become a legend that inspires generations to come!",
+            "You become lost in time, your story becoming a mysterious tale!",
+            "You rule the future with wisdom and compassion!",
+            "You make the ultimate sacrifice to save the world you love!",
+            "You retire peacefully, having changed history forever!"
         ]
-    """Main storytelling engine with character creation and conversation flow"""
     
     def __init__(self, memory_path: str = None):
-        self.memory = DocumentMemorySystem(memory_path)
-        self.npc_manager = NPCManager()
-        self.character: Optional[Character] = None
-        self.game_started = False
+        self.memory = DocumentMemorySystem(memory_path)  # Our amazing memory palace
+        self.npc_manager = NPCManager()                   # All the characters you'll meet
+        self.character: Optional[Character] = None        # Your heroic character
+        self.game_started = False                         # Adventure status
         
-        # Load existing character if available
+        # Welcome back any returning heroes!
         self._load_character()
     
     def _load_character(self):
-        """Load character from memory if it exists"""
+        """🔍 Look for any returning heroes who want to continue their adventure!"""
         try:
             memory_summary = self.memory.get_summary()
-            # Try to load character from a separate file
+            # Check if we have a saved hero waiting to return
             import os
             char_file = os.path.join(self.memory.save_path, "character.json")
             if os.path.exists(char_file):
                 with open(char_file, 'r') as f:
                     char_data = json.load(f)
                     self.character = Character.from_dict(char_data)
-                    print(f"Loaded existing character: {self.character.name}")
+                    print(f"🎉 Welcome back, {self.character.name}! Ready for more adventures?")
         except Exception as e:
-            print(f"Could not load existing character: {e}")
+            print(f"📝 No returning hero found (that's fine - let's create a new one!): {e}")
     
     def _save_character(self):
-        """Save character to disk"""
+        """💾 Carefully save your hero so they can return for future adventures!"""
         if not self.character:
             return
         
@@ -73,22 +81,23 @@ class StorytellingEngine:
             char_file = os.path.join(self.memory.save_path, "character.json")
             with open(char_file, 'w') as f:
                 json.dump(self.character.to_dict(), f, indent=2)
+            print(f"✅ {self.character.name} is safely saved for future adventures!")
         except Exception as e:
-            print(f"Could not save character: {e}")
+            print(f"⚠️ Couldn't save character (but they're still active): {e}")
     
     def create_character(self, name: str, background: str, personality: str, goals: str, **attributes) -> str:
-        """Create a new character"""
+        """⚔️ Bring your amazing hero to life and prepare them for epic adventures!"""
         self.character = Character(name, background, personality, goals, attributes)
         self._save_character()
-        self.game_started = False  # Reset game state
-        return f"Character {name} created successfully!"
+        self.game_started = False  # Fresh start for new adventures
+        return f"🎉 Hero {name} is ready for adventure! Let the stories begin!"
     
     def has_character(self) -> bool:
-        """Check if a character has been created"""
+        """🧙‍♂️ Check if we have a hero ready for adventures"""
         return self.character is not None
     
     def start_adventure(self) -> str:
-        """Generate initial DM introduction"""
+        """🚀 Begin an epic adventure with your hero!"""
         if not self.character:
             return "Please create a character first!"
         

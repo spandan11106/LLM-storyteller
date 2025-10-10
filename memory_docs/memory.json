@@ -1,241 +1,6 @@
 {
-  "turn_counter": 2301,
+  "turn_counter": 2305,
   "conversations": [
-    {
-      "turn_id": 2252,
-      "timestamp": "2025-10-10T12:17:11.518592",
-      "player_action": "I ask if they know anyone else I should meet",
-      "dm_response": "As you ask if they know anyone else you should meet, the vendor's eyes light up with a knowing glint. \"Ah, you're looking to connect the dots, aren't you? Very well, I might know of someone who could help you in your quest for knowledge.\" She leans in closer, her voice barely above a whisper. \"Follow the path of the setting sun to the eastern edge of the village. You'll find the hut of the village's elder, a wise woman named Elara. She's said to possess knowledge of the ancient lore and might be willing to share it with one who's willing to listen.\"\n\nThe vendor glances around the square, making sure no one is listening in on your conversation. \"But be warned, Dio, Elara is not one to be trifled with. She's seen the passing of seasons and the rise and fall of empires. She knows the secrets that lie beyond the veil of time, and she's not afraid to share them with those who are willing to hear.\"\n\nYou thank the vendor for the information and ask which of the many paths you should take to reach Elara's hut. She nods towards the eastern edge of the village, where the sun is slowly dipping below the horizon. \"Follow the path, and you'll find yourself at the entrance to Elara's hut. But be cautious, Dio, the night is full of shadows, and not all of them are as they seem.\"\n\nWith the vendor's words of caution still echoing in your mind, you set off towards Elara's hut, your senses on high alert for any signs of danger. As you walk, the crowd begins to disperse, and the village square grows quiet, except for the occasional distant sound of laughter or the clinking of utensils in the nearby taverns.\n\nYou follow the winding path, the trees growing taller and the air growing thick with anticipation. Suddenly, a faint breeze stirs the leaves, and you feel a shiver run down your spine. The sun dips below the horizon, casting the world in a dark, moonlit glow.\n\nYou quicken your pace, your heart pounding in your chest. Where is Elara's hut? You've walked for what feels like hours, but the darkness seems to stretch on forever. Suddenly, you hear a faint rustling in the bushes. It's a soft, deliberate movement, as if someone \u2013 or something \u2013 is watching you from the shadows.\n\nDo you:\n\nA) Investigate the noise\nB) Press on, finding Elara's hut as quickly as possible\nC) Return to the village, feeling uneasy about the darkness\nD) Wait for a moment, watching and listening for any signs of danger\n\nChoose your response.",
-      "extracted_facts": [
-        "aren",
-        "You follow the winding path",
-        "Where is Elara",
-        "not afraid to share them with those who are willing to hear",
-        "knowing glint",
-        "Do you",
-        "She leans in closer",
-        "The vendor glances around the square",
-        "your senses on high alert for any signs of danger",
-        "ve walked for what feels like hours",
-        "you set off towards Elara",
-        "seen the passing of seasons and the rise and fall of empires",
-        "dark",
-        "deliberate movement",
-        "watching and listening for any signs of danger\n\nChoose your response",
-        "faint rustling in the bushes",
-        "but the darkness seems to stretch on forever",
-        "Follow the path of the setting sun to the eastern edge of the village",
-        "you",
-        "You",
-        "is watching you from the shadows",
-        "You thank the vendor for the information and ask which of the many paths you should take to reach Elara",
-        "Press on",
-        "ll find yourself at the entrance to Elara",
-        "Investigate the noise",
-        "Dio",
-        "said to possess knowledge of the ancient lore and might be willing to share it with one who",
-        "She nods towards the eastern edge of the village",
-        "whisper",
-        "feeling uneasy about the darkness",
-        "your heart pounding in your chest",
-        "But be warned",
-        "She",
-        "As you walk",
-        "words of caution still echoing in your mind",
-        "moonlit glow",
-        "elder",
-        "faint breeze stirs the leaves",
-        "shiver run down your spine",
-        "wise woman named Elara",
-        "you hear",
-        "Follow the path",
-        "eyes light up with",
-        "village",
-        "willing to listen",
-        "the night is full of shadows",
-        "ask if they know anyone else",
-        "or something",
-        "Wait for",
-        "But be cautious",
-        "hut as quickly as possible",
-        "and the village square grows quiet",
-        "might know of someone who could help you in your quest for knowledge",
-        "hut",
-        "as if someone",
-        "should meet As you ask if they know anyone else you should meet",
-        "ll find the hut of the village",
-        "the trees growing taller and the air growing thick with anticipation",
-        "With the vendor",
-        "the vendor",
-        "and she",
-        "casting the world in",
-        "Return to the village",
-        "and not all of them are as they seem",
-        "and you",
-        "except for the occasional distant sound of laughter or the clinking of utensils in the nearby taverns",
-        "Suddenly",
-        "moment",
-        "her voice barely above",
-        "could -> you",
-        "finding Elara",
-        "and you feel",
-        "re looking to connect the dots",
-        "the crowd begins to disperse",
-        "The sun dips below the horizon",
-        "You quicken your pace",
-        "s -> possess",
-        "soft",
-        "Elara is not one to be trifled with",
-        "where the sun is slowly dipping below the horizon",
-        "She knows the secrets that lie beyond the veil of time",
-        "making sure no one is listening in on your conversation",
-        "Very well"
-      ],
-      "importance_score": 3.0
-    },
-    {
-      "turn_id": 2253,
-      "timestamp": "2025-10-10T12:17:49.685765",
-      "player_action": "I ask the villagers if there are any problems that need solving",
-      "dm_response": "As you ask the villagers if there are any problems that need solving, a murmur of conversation erupts among the crowd. A young woman approaches you, her eyes shining with a mixture of desperation and hope. \"Please, adventurer, we need your help,\" she says, her voice barely above a whisper. \"My sister has gone missing, and we don't know what's happened to her. She was last seen walking towards the old ruins on the outskirts of the village, but none of us have seen her since.\"\n\nThe villagers begin to nod in agreement, and a tall, imposing man steps forward. \"Aye, we've had troubles with strange happenings on the outskirts of the village. Folks have gone missing, and some have reported seeing shadowy figures lurking in the woods. We fear something dark is brewing, and we don't know what to do about it.\"\n\nThe villager who brought her sister's disappearance to your attention begins to tremble, her eyes welling up with tears. \"Please, Dio, you have to help us find my sister. She's all I have left in this world.\"\n\nAs you listen to the villagers' concerns, you notice the hooded figure from earlier watching you with an intensity that makes your skin crawl. The air seems to grow thicker with tension, and you wonder what secrets are hidden behind their enigmatic gaze.\n\nSuddenly, a gust of wind carries a faint whisper through the scene \u2013 \"The Nightwalker's gaze is near.\" The words seem to strike a chord within you, and you feel a shiver run down your spine. What does this ominous message mean, and how is it connected to the strange happenings in the village?\n\nYou must now decide how to proceed, considering the villagers' pleas for help and the unsettling presence of the hooded figure.\n\nDo you:\n\nA) Set out to search for the missing woman, following the trail that leads towards the old ruins\nB) Ask the villagers more questions about the strange happenings and the shadowy figures they've seen\nC) Approach the hooded figure and demand answers about their intentions\nD) Search the village for any clues or leads that might shed light on the mysterious events",
-      "extracted_facts": [
-        "know what",
-        "Folks have gone missing",
-        "we need your help",
-        "mixture of desperation and hope",
-        "chord within you",
-        "Dio",
-        "The air seems to grow thicker with tension",
-        "As you listen to the villagers",
-        "Set out to search for the missing woman",
-        "have left in this world",
-        "you have to help us find my sister",
-        "Do you",
-        "ve seen",
-        "village",
-        "whisper",
-        "disappearance to your attention begins to tremble",
-        "all",
-        "Suddenly",
-        "You must now decide how to proceed",
-        "faint whisper through the scene",
-        "She was last seen walking towards the old ruins on the outskirts of the village",
-        "you notice the hooded figure from earlier watching you with an intensity that makes your skin crawl",
-        "her voice barely above",
-        "murmur of conversation erupts among the crowd",
-        "to -> us",
-        "happened to her",
-        "The villagers begin to nod in agreement",
-        "know what to do about it",
-        "pleas for help and the unsettling presence of the hooded figure",
-        "concerns",
-        "and you feel",
-        "but none of us have seen her since",
-        "Please",
-        "adventurer",
-        "The words seem to strike",
-        "She",
-        "gust of wind carries",
-        "gaze is near",
-        "her eyes shining with",
-        "and how is it connected to the strange happenings in the village",
-        "What does this ominous message mean",
-        "Search the village for any clues or leads that might shed light on the mysterious events",
-        "We fear something dark is brewing",
-        "The villager who brought her sister",
-        "for -> and",
-        "My sister has gone missing",
-        "Aye",
-        "considering the villagers",
-        "following the trail that leads towards the old ruins",
-        "Ask the villagers more questions about the strange happenings and the shadowy figures they",
-        "Approach the hooded figure and demand answers about their intentions",
-        "and we don",
-        "young woman approaches you",
-        "and some have reported seeing shadowy figures lurking in the woods",
-        "ve had troubles with strange happenings on the outskirts of the village",
-        "The Nightwalker",
-        "she says",
-        "ask the villagers if there are any problems that need solving As you ask the villagers if there are any problems that need solving",
-        "tall",
-        "and",
-        "imposing man steps forward",
-        "her eyes welling up with tears",
-        "shiver run down your spine",
-        "and you wonder what secrets are hidden behind their enigmatic gaze"
-      ],
-      "importance_score": 2.0
-    },
-    {
-      "turn_id": 2254,
-      "timestamp": "2025-10-10T12:17:50.025035",
-      "player_action": "I greet the first person I see warmly",
-      "dm_response": "Error generating text: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01k6zax876ehstgszah0jjgbv8` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 6217, Requested 3450. Please try again in 36.676s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
-      "extracted_facts": [
-        "in organization",
-        "message",
-        "Limit",
-        "settings",
-        "Error code",
-        "error",
-        "billing",
-        "type",
-        "tokens",
-        "Rate limit reached for model",
-        "groq",
-        "llama",
-        "com",
-        "see warmly Error generating text",
-        "on tokens per minute",
-        "Please try again in",
-        "greet the first person",
-        "TPM",
-        "Requested",
-        "service tier",
-        "Need more tokens",
-        "instant",
-        "Upgrade to Dev Tier today at https",
-        "console",
-        "code",
-        "Used"
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "turn_id": 2255,
-      "timestamp": "2025-10-10T12:17:50.209220",
-      "player_action": "I share a story about my own adventures",
-      "dm_response": "Error generating text: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01k6zax876ehstgszah0jjgbv8` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 6198, Requested 3450. Please try again in 36.482s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
-      "extracted_facts": [
-        "in organization",
-        "message",
-        "Limit",
-        "settings",
-        "Error code",
-        "error",
-        "billing",
-        "type",
-        "tokens",
-        "Rate limit reached for model",
-        "groq",
-        "llama",
-        "story about my own adventures Error generating text",
-        "com",
-        "on tokens per minute",
-        "Please try again in",
-        "TPM",
-        "Requested",
-        "service tier",
-        "Need more tokens",
-        "instant",
-        "Upgrade to Dev Tier today at https",
-        "console",
-        "code",
-        "Used",
-        "share"
-      ],
-      "importance_score": 1.0
-    },
     {
       "turn_id": 2256,
       "timestamp": "2025-10-10T12:17:50.692353",
@@ -4011,6 +3776,426 @@
         "their branches tangled in"
       ],
       "importance_score": 5.0
+    },
+    {
+      "turn_id": 2302,
+      "timestamp": "2025-10-10T18:13:15.664337",
+      "player_action": "[Character Created: Dio]",
+      "dm_response": "The scent of sea salt and smoke wafts through the air as the sun sets over the quaint coastal town of Ravenshire. The sound of waves crashing against the weathered docks echoes through the streets, mingling with the chatter of townsfolk. It's a warm summer evening, and the sky is painted with hues of crimson and gold.\n\nYou are Dio, a mysterious adventurer with a reputation for being fearless and insatiably curious. Your name is whispered in awe by the townsfolk, who often speak of your bravery and your ability to navigate treacherous landscapes with ease.\n\nAs you stroll through the town, you notice a sense of unease in the air. The townsfolk seem nervous, casting furtive glances at the local tavern, the Raven's Rest. They speak in hushed tones, sharing stories of a local sailor who disappeared on a recent voyage. Some say he was attacked by a group of ruthless pirates, while others claim he stumbled upon a hidden treasure and never returned.\n\nYou push open the door to the tavern, and the warm glow of the fire pit and the murmur of conversations envelop you. The room falls silent as you enter, and all eyes turn to you. You notice a figure sitting in the corner, cloaked in shadows. The air seems to thicken with anticipation.\n\nThe bard in the corner raises his mug, and the patrons follow suit, their eyes never leaving you. \"To Dio, the brave adventurer!\" he cheers, his voice dripping with honey. \"May your journey be filled with fortune and glory!\"\n\nThe patrons resume their conversations, and you notice a group of shady-looking individuals hovering near the bar. They seem to be discussing something in hushed tones, casting frequent glances at the door. The atmosphere is tense, and you sense that something is brewing.\n\nSuddenly, a beautiful young woman approaches you. Her raven-black hair cascades down her back like a waterfall, and her bright blue eyes sparkle with a mischievous glint. \"Dio, I've been searching for you,\" she says, her voice barely above a whisper. \"I have a message from a... friend. He says there's a valuable artifact hidden in the long-abandoned Castle Eldrador, deep in the nearby forest.\"\n\nShe leans in closer, her breath dancing across your ear. \"But be warned, Dio, you're not the only one searching for it. There are those who'll stop at nothing to get it, and the forest can be a treacherous place, especially for the unwary.\"\n\nYou consider her words, weighing your options. Do you:\n\nA) Head straight to the Castle Eldrador, eager to claim the artifact and uncover its secrets.\nB) Ignore the message and explore the town, getting a feel for the local rumors and gossip.\nC) Ask the mysterious woman for more information about the artifact and the Castle Eldrador.\nD) Order a drink and listen to the bard's stories, enjoying the tavern's warm atmosphere.\n\nWhat will you do, Dio?",
+      "extracted_facts": [
+        "warm summer evening",
+        "The sound of waves crashing against the weathered docks echoes through the streets",
+        "The room falls silent as you enter",
+        "tavern",
+        "looking individuals hovering near the bar",
+        "especially for the unwary",
+        "enjoying the tavern",
+        "abandoned Castle Eldrador",
+        "and all eyes turn to you",
+        "Ask the mysterious woman for more information about the artifact and the Castle Eldrador",
+        "The atmosphere is tense",
+        "What will you do",
+        "Head straight to the Castle Eldrador",
+        "The bard in the corner raises his mug",
+        "and the forest can be",
+        "getting",
+        "Suddenly",
+        "He says there",
+        "beautiful young woman approaches you",
+        "and the patrons follow suit",
+        "she says",
+        "treacherous place",
+        "figure sitting in the corner",
+        "the brave adventurer",
+        "They seem to be discussing something in hushed tones",
+        "ve been searching for you",
+        "There are those who",
+        "have",
+        "Her raven",
+        "Dio",
+        "Rest",
+        "But be warned",
+        "stories",
+        "mingling with the chatter of townsfolk",
+        "mischievous glint",
+        "recent voyage",
+        "sense of unease in the air",
+        "group of ruthless pirates",
+        "his voice dripping with honey",
+        "ll stop at nothing to get it",
+        "casting frequent glances at the door",
+        "and the sky is painted with hues of crimson and gold",
+        "You notice",
+        "and you sense that something is brewing",
+        "Do you",
+        "Ignore the message and explore the town",
+        "Your name is whispered in awe by the townsfolk",
+        "hidden treasure and never returned",
+        "was -> by",
+        "who often speak of your bravery and your ability to navigate treacherous landscapes with ease",
+        "and the warm glow of the fire pit and the murmur of conversations envelop you",
+        "warm atmosphere",
+        "The air seems to thicken with anticipation",
+        "deep in the nearby forest",
+        "drink and listen to the bard",
+        "You are Dio",
+        "They speak in hushed tones",
+        "To Dio",
+        "weighing your options",
+        "you notice",
+        "You push open the door to the tavern",
+        "eager to claim the artifact and uncover its secrets",
+        "waterfall",
+        "her voice barely above",
+        "re not the only one searching for it",
+        "and you notice",
+        "group of shady",
+        "Character Created",
+        "The patrons resume their conversations",
+        "feel for the local rumors and gossip",
+        "gold",
+        "The scent of sea salt and smoke wafts through the air as the sun sets over the quaint coastal town of Ravenshire",
+        "As you stroll through the town",
+        "and her bright blue eyes sparkle with",
+        "message from",
+        "May your journey be filled with fortune and glory",
+        "Some say he was attacked by",
+        "The townsfolk seem nervous",
+        "valuable artifact hidden in the long",
+        "Order",
+        "mysterious adventurer with",
+        "reputation for being fearless and insatiably curious",
+        "She leans in closer",
+        "her breath dancing across your ear",
+        "black hair cascades down her back like",
+        "cloaked in shadows",
+        "their eyes never leaving you",
+        "treasure",
+        "you",
+        "he cheers",
+        "You consider her words",
+        "the Raven",
+        "while others claim he stumbled upon",
+        "casting furtive glances at the local tavern",
+        "friend",
+        "local sailor who disappeared on",
+        "sharing stories of",
+        "Castle",
+        "whisper",
+        "forest"
+      ],
+      "importance_score": 2.0
+    },
+    {
+      "turn_id": 2303,
+      "timestamp": "2025-10-10T18:13:42.136579",
+      "player_action": ") Head straight to the Castle Eldrador, eager to claim the artifact and uncover its secrets.\nB) Ignore the message and explore the town, getting a feel for the local rumors and gossip.",
+      "dm_response": "As you decide to head straight to the Castle Eldrador, the mysterious woman nods in approval, a hint of a smile on her lips. \"You're a true adventurer, Dio. I knew I could count on you to take the first step.\"\n\nShe hands you a small, intricately carved wooden box. \"This contains a map and some information about the castle. But be warned, the journey won't be easy. The forest is full of dangers, and you'll need to be careful if you want to make it out alive.\"\n\nYou take the box, feeling a surge of excitement and anticipation. The mystery of the artifact and the castle is too great to resist, and you're determined to uncover its secrets.\n\nWith the map in hand, you set off towards the forest, the moon casting long, ominous shadows across the ground. The townsfolk bid you farewell, their faces filled with a mix of envy and admiration.\n\nAs you venture deeper into the forest, the trees seem to close in around you, their branches creaking ominously in the wind. You hear the distant howl of a wolf, and the rustling of leaves beneath your feet.\n\nAfter what feels like hours of walking, you come across a clearing, and in the center of it stands the ruined Castle Eldrador. The once-majestic structure now lies in shambles, its walls cracked and worn, the windows shattered.\n\nYou approach the entrance, a massive stone doorway adorned with intricate carvings of ancient runes. The air is heavy with the scent of decay and neglect, and you can feel a strange, pulsating energy emanating from within.\n\nSuddenly, a figure emerges from the shadows, a hooded figure dressed in tattered robes. \"Welcome, Dio,\" they say in a low, gravelly voice. \"I've been expecting you. My name is Thorne, and I've been watching over this castle for... decades, perhaps century.\"\n\nThorne steps aside, revealing a narrow path leading into the castle's depths. \"The artifact you seek lies within, but be warned: the castle is treacherous, and you won't be the only one searching for it.\"\n\nYou hesitate, unsure of what to do next. Thorne seems to sense your unease, and nods in encouragement. \"You have a choice to make, Dio. You can either try to navigate the castle's ancient traps and puzzles, or you can seek the aid of a powerful ally who lies within.\"\n\nYour eyes narrow, trying to decipher Thorne's words. \"What do you mean?\" you ask, your voice low and controlled.\n\nThorne smiles, a glint in his eye. \"Ah, but that would be telling. You'll have to decide for yourself, Dio. Will you brave the perilous path ahead, or will you seek the aid of a mysterious ally who lies within?\"\n\nYou consider Thorne's words, weighing your options. Do you:\n\nA) Venture into the castle, relying on your wits and your courage to navigate its ancient traps and puzzles.\nB) Seek the aid of the mysterious ally who lies within, hoping to gain a powerful ally in your quest for the artifact.\nC) Ask Thorne more questions, trying to uncover the secrets of the castle and the artifact.\nD) Refuse Thorne's offer, and return to the town, deciding that the journey was too perilous.\n\nWhat will you do, Dio?",
+      "extracted_facts": [
+        "You have",
+        "perhaps century",
+        "The artifact you seek lies within",
+        "map and some information about the castle",
+        "decades",
+        "and",
+        "intricately carved wooden box",
+        "What will you do",
+        "ve been watching over this castle for",
+        "Head straight to the Castle Eldrador",
+        "true adventurer",
+        "revealing",
+        "The forest is full of dangers",
+        "getting",
+        "Suddenly",
+        "She hands you",
+        "you set off towards the forest",
+        "majestic structure now lies in shambles",
+        "As you venture deeper into the forest",
+        "you come across",
+        "Refuse Thorne",
+        "mix of envy and admiration",
+        "You hear the distant howl of",
+        "powerful ally who lies within",
+        "the windows shattered",
+        "The once",
+        "knew",
+        "With the map in hand",
+        "the journey won",
+        "its walls cracked and worn",
+        "wolf",
+        "and you won",
+        "but be warned",
+        "Dio",
+        "You",
+        "small",
+        "trying to decipher Thorne",
+        "your voice low and controlled",
+        "and you",
+        "deciding that the journey was too perilous",
+        "What do you mean",
+        "the castle is treacherous",
+        "be easy",
+        "But be warned",
+        "hint of",
+        "and return to the town",
+        "As you decide to head straight to the Castle Eldrador",
+        "Your eyes narrow",
+        "words",
+        "massive stone doorway adorned with intricate carvings of ancient runes",
+        "hooded figure dressed in tattered robes",
+        "Seek the aid of the mysterious ally who lies within",
+        "narrow path leading into the castle",
+        "the trees seem to close in around you",
+        "The air is heavy with the scent of decay and neglect",
+        "mysterious ally who lies within",
+        "glint in his eye",
+        "Do you",
+        "and you can feel",
+        "Ignore the message and explore the town",
+        "ancient traps and puzzles",
+        "re determined to uncover its secrets",
+        "offer",
+        "their faces filled with",
+        "ll have to decide for yourself",
+        "they say in",
+        "ominous shadows across the ground",
+        "or you can seek the aid of",
+        "and in the center of it stands the ruined Castle Eldrador",
+        "powerful ally in your quest for the artifact",
+        "trying to uncover the secrets of the castle and the artifact",
+        "Venture into the castle",
+        "surge of excitement and anticipation",
+        "ve been expecting you",
+        "but that would be telling",
+        "weighing your options",
+        "eager to claim the artifact and uncover its secrets",
+        "The mystery of the artifact and the castle is too great to resist",
+        "could count on you to take the first step",
+        "ll need to be careful if you want to make it out alive",
+        "relying on your wits and your courage to navigate its ancient traps and puzzles",
+        "clearing",
+        "figure emerges from the shadows",
+        "feel for the local rumors and gossip",
+        "be the only one searching for it",
+        "The townsfolk bid you farewell",
+        "You consider Thorne",
+        "You hesitate",
+        "This contains",
+        "and the rustling of leaves beneath your feet",
+        "gravelly voice",
+        "Will you brave the perilous path ahead",
+        "depths",
+        "the moon casting long",
+        "their branches creaking ominously in the wind",
+        "You approach the entrance",
+        "My name is Thorne",
+        "You take the box",
+        "pulsating energy emanating from within",
+        "Ask Thorne more questions",
+        "Thorne seems to sense your unease",
+        "unsure of what to do next",
+        "You can either try to navigate the castle",
+        "and nods in encouragement",
+        "strange",
+        "the mysterious woman nods in approval",
+        "castle",
+        "Thorne smiles",
+        "After what feels like hours of walking",
+        "choice to make",
+        "Welcome",
+        "feeling",
+        "or will you seek the aid of",
+        "you ask",
+        "Castle",
+        "Thorne steps aside",
+        "low",
+        "forest",
+        "smile on her lips",
+        "hoping to gain"
+      ],
+      "importance_score": 4.0
+    },
+    {
+      "turn_id": 2304,
+      "timestamp": "2025-10-10T18:20:55.217680",
+      "player_action": "[Character Created: Dio]",
+      "dm_response": "As you emerge from the dense forest, the warm sunlight casts a golden glow upon your weathered leather armor, worn from countless adventures. You, Dio, have been traveling for days, following the whispers of a fabled artifact hidden deep within the long-abandoned Temple of the Moon Goddess. The wind carries the sweet scent of blooming wildflowers and the distant call of a lone waterbird, drawing you closer to the ancient structure.\n\nAs you approach the temple's entrance, you notice an eerie silence hangs like a shroud over the area. The once-majestic pillars, now covered in vines and moss, seem to lean inwards, as if guarding a secret. The massive wooden doors, adorned with intricate carvings of lunar cycles and celestial events, hang crookedly from their hinges.\n\nYour stomach growls with anticipation as you step forward, hand on the hilt of your trusty sword. As you push the doors open, a faint whispering echoes through the temple, leaving you with the unsettling feeling that you're being watched.\n\nBeyond the entrance lies a sprawling foyer, dominated by a stunning crystal chandelier that casts an ethereal glow upon the dusty, cobweb-covered frescoes depicting the Moon Goddess's most revered stories. The air is heavy with dust and the scent of aged parchment. A lone, flickering torch casts dancing shadows upon the walls, drawing your attention to a trio of passageways that branch off in different directions.\n\nTo the left, a narrow corridor disappears into darkness, lined with the silvery glow of luminescent mushrooms. This route appears treacherous, yet beckons with the promise of hidden secrets.\n\nTo the right, a grand staircase sweeps upwards, disappearing into the shadows of the upper levels. The air above seems to hum with an otherworldly energy, as if the temple's secrets reside within the very fabric of the moonlit sky.\n\nStraight ahead, a broad corridor stretches into the heart of the temple, lined with intricate frescoes and tapestries that tell the tale of the Moon Goddess's most revered companions. A soft, melodic voice seems to emanate from the end of the corridor, whispering tales of bravery and sacrifice.\n\nWhich path will you choose, brave adventurer?",
+      "extracted_facts": [
+        "As you emerge from the dense forest",
+        "cobweb",
+        "Which path will you choose",
+        "The air above seems to hum with an otherworldly energy",
+        "The air is heavy with dust and the scent of aged parchment",
+        "This route appears treacherous",
+        "secret",
+        "re being watched",
+        "Straight ahead",
+        "abandoned Temple of the Moon Goddess",
+        "leaving you with the unsettling feeling that you",
+        "following the whispers of",
+        "whispering tales of bravery and sacrifice",
+        "have been traveling for days",
+        "stunning crystal chandelier that casts an ethereal glow upon the dusty",
+        "the warm sunlight casts",
+        "shroud over the area",
+        "The wind carries the sweet scent of blooming wildflowers and the distant call of",
+        "lone waterbird",
+        "worn from countless adventures",
+        "As you push the doors open",
+        "drawing your attention to",
+        "adorned with intricate carvings of lunar cycles and celestial events",
+        "entrance",
+        "dominated by",
+        "The once",
+        "sword",
+        "secrets reside within the very fabric of the moonlit sky",
+        "golden glow upon your weathered leather armor",
+        "Your stomach growls with anticipation as you step forward",
+        "To the right",
+        "Beyond the entrance lies",
+        "grand staircase sweeps upwards",
+        "you notice an eerie silence hangs like",
+        "as if the temple",
+        "soft",
+        "hand on the hilt of your trusty sword",
+        "Dio",
+        "narrow corridor disappears into darkness",
+        "flickering torch casts dancing shadows upon the walls",
+        "You",
+        "now covered in vines and moss",
+        "disappearing into the shadows of the upper levels",
+        "most revered stories",
+        "lined with the silvery glow of luminescent mushrooms",
+        "broad corridor stretches into the heart of the temple",
+        "most revered companions",
+        "covered frescoes depicting the Moon Goddess",
+        "melodic voice seems to emanate from the end of the corridor",
+        "that -> the",
+        "armor",
+        "majestic pillars",
+        "To the left",
+        "forest",
+        "Character Created",
+        "sprawling foyer",
+        "drawing you closer to the ancient structure",
+        "as if guarding",
+        "The massive wooden doors",
+        "lined with intricate frescoes and tapestries that tell the tale of the Moon Goddess",
+        "yet beckons with the promise of hidden secrets",
+        "fabled artifact hidden deep within the long",
+        "As you approach the temple",
+        "lone",
+        "hang crookedly from their hinges",
+        "trio of passageways that branch off in different directions",
+        "seem to lean inwards",
+        "faint whispering echoes through the temple",
+        "brave adventurer"
+      ],
+      "importance_score": 2.0
+    },
+    {
+      "turn_id": 2305,
+      "timestamp": "2025-10-10T18:21:06.068443",
+      "player_action": "Hi",
+      "dm_response": "As you step into the foyer, the flickering torch above you casts a warm glow, illuminating the dusty frescoes that depict the Moon Goddess's most revered stories. The air is heavy with the scent of aged parchment, and the soft whispering echoes through the temple, leaving you with the unsettling feeling that you're being watched.\n\nYou glance to your left, where the narrow corridor disappears into darkness, lined with the silvery glow of luminescent mushrooms. The route appears treacherous, yet beckons with the promise of hidden secrets. You can feel the thrill of adventure calling to you, like a siren's song, tugging at your heartstrings.\n\nTo your right, the grand staircase sweeps upwards, disappearing into the shadows of the upper levels. The air above seems to hum with an otherworldly energy, as if the temple's secrets reside within the very fabric of the moonlit sky. You sense that there might be powerful magic waiting for you on those upper levels, but the darkness that lies above seems daunting, like a challenge to be overcome.\n\nStraight ahead, the broad corridor stretches into the heart of the temple, lined with intricate frescoes and tapestries that tell the tale of the Moon Goddess's most revered companions. A soft, melodic voice seems to emanate from the end of the corridor, whispering tales of bravery and sacrifice. The words weave a spell around you, transporting you to a time when heroes roamed the land, their deeds etched in the stones of this ancient temple.\n\nYour heart beats faster, as you weigh your options. Which path will you choose, brave adventurer? The darkness of the left corridor beckons, promising secrets and hidden dangers. The stairway to the right seems to call to you, with its promise of power and magic. And the corridor ahead, lined with the tales of heroes, seems to sing a song of glory and adventure.\n\nAs you ponder your choice, the whispering in the temple grows louder, the words becoming clearer. You sense that the temple itself is guiding you, urging you towards the right path. But which one?\n\nSuddenly, a figure emerges from the shadows, a woman with long, flowing hair and eyes that shine like stars. She glides towards you, her steps silent on the stone floor, and her voice is as melodious as a nightingale's song.\n\n\"Welcome, Dio,\" she says, her eyes sparkling with warmth. \"I have been waiting for you. I know the path you must take, the secrets you must uncover. But I also know the dangers that lie ahead. You must choose wisely, brave adventurer, for the fate of the Moon Goddess herself hangs in the balance.\"\n\nThe woman's words are like a key turning in a lock, clearing the way for a choice that will change the course of your journey. Will you:\n\nA) Take the left corridor, venturing into the darkness to uncover the secrets hidden within.\nB) Climb the grand staircase, ascending into the shadows to claim the power that lies above.\nC) Follow the broad corridor, listening to the tale of heroes, and embracing the quest that lies ahead.\nD) Ask the mysterious woman more questions, seeking guidance and wisdom to aid you on your journey.\n\nWhich path will you choose, brave adventurer?",
+      "extracted_facts": [
+        "But",
+        "You sense that there might be powerful magic waiting for you on those upper levels",
+        "re being watched",
+        "venturing into the darkness to uncover the secrets hidden within",
+        "You can feel the thrill of adventure calling to you",
+        "lock",
+        "the words becoming clearer",
+        "You glance to your left",
+        "but the darkness that lies above seems daunting",
+        "warm glow",
+        "siren",
+        "The woman",
+        "key turning in",
+        "song",
+        "The darkness of the left corridor beckons",
+        "with its promise of power and magic",
+        "Welcome",
+        "The air is heavy with the scent of aged parchment",
+        "The stairway to the right seems to call to you",
+        "seeking guidance and wisdom to aid you on your journey",
+        "Suddenly",
+        "You must choose wisely",
+        "and the soft whispering echoes through the temple",
+        "Take the left corridor",
+        "To your right",
+        "Straight ahead",
+        "leaving you with the unsettling feeling that you",
+        "whispering tales of bravery and sacrifice",
+        "key",
+        "spell around you",
+        "As you ponder your choice",
+        "as if the temple",
+        "her steps silent on the stone floor",
+        "the secrets you must uncover",
+        "transporting you to",
+        "challenge to be overcome",
+        "nightingale",
+        "Dio",
+        "the grand staircase sweeps upwards",
+        "And the corridor ahead",
+        "most revered companions",
+        "her eyes sparkling with warmth",
+        "The words weave",
+        "words are like",
+        "the whispering in the temple grows louder",
+        "Climb the grand staircase",
+        "Which path will you choose",
+        "ascending into the shadows to claim the power that lies above",
+        "Hi As you step into the foyer",
+        "Follow the broad corridor",
+        "as you weigh your options",
+        "seems to sing",
+        "woman with long",
+        "and embracing the quest that lies ahead",
+        "Ask the mysterious woman more questions",
+        "their deeds etched in the stones of this ancient temple",
+        "time when heroes roamed the land",
+        "she says",
+        "lined with the tales of heroes",
+        "soft",
+        "most revered stories",
+        "melodic voice seems to emanate from the end of the corridor",
+        "that -> the",
+        "listening to the tale of heroes",
+        "Your heart beats faster",
+        "where the narrow corridor disappears into darkness",
+        "The route appears treacherous",
+        "lined with intricate frescoes and tapestries that tell the tale of the Moon Goddess",
+        "yet beckons with the promise of hidden secrets",
+        "disappearing into the shadows of the upper levels",
+        "and her voice is as melodious as",
+        "But which one",
+        "brave adventurer",
+        "the broad corridor stretches into the heart of the temple",
+        "tugging at your heartstrings",
+        "The air above seems to hum with an otherworldly energy",
+        "figure emerges from the shadows",
+        "clearing the way for",
+        "for the fate of the Moon Goddess herself hangs in the balance",
+        "song of glory and adventure",
+        "She glides towards you",
+        "the flickering torch above you casts",
+        "secrets reside within the very fabric of the moonlit sky",
+        "know the path you must take",
+        "Will you",
+        "flowing hair and eyes that shine like stars",
+        "lined with the silvery glow of luminescent mushrooms",
+        "also know the dangers that lie ahead",
+        "illuminating the dusty frescoes that depict the Moon Goddess",
+        "have been waiting for you",
+        "choice that will change the course of your journey",
+        "like",
+        "You sense that the temple itself is guiding you",
+        "promising secrets and hidden dangers",
+        "urging you towards the right path"
+      ],
+      "importance_score": 5.0
     }
   ],
   "facts": {
@@ -4141,7 +4326,8 @@
     ],
     "Your eyes narrow": [
       1,
-      51
+      51,
+      2303
     ],
     "His voice": [
       1
@@ -4168,7 +4354,8 @@
       2264,
       2265,
       2268,
-      2279
+      2279,
+      2305
     ],
     "crimson glow over the endless expanse of sand": [
       1
@@ -4300,7 +4487,11 @@
       2248,
       2252,
       2253,
-      2258
+      2258,
+      2302,
+      2303,
+      2304,
+      2305
     ],
     "Character Created": [
       1,
@@ -4446,7 +4637,9 @@
       2263,
       2269,
       2281,
-      2292
+      2292,
+      2302,
+      2304
     ],
     "warrior shrouded in mystery": [
       1
@@ -4519,7 +4712,8 @@
       2288,
       2289,
       2290,
-      2298
+      2298,
+      2302
     ],
     "if you seek wealth": [
       1
@@ -4666,7 +4860,8 @@
       1554,
       2233,
       2263,
-      2283
+      2283,
+      2303
     ],
     "remember that your fate is intertwined with that of your people": [
       2
@@ -4711,7 +4906,8 @@
       2278,
       2279,
       2280,
-      2286
+      2286,
+      2302
     ],
     "has your thoughts racing": [
       2
@@ -4723,7 +4919,8 @@
       62,
       384,
       768,
-      2283
+      2283,
+      2303
     ],
     "and the potential costs": [
       2
@@ -4735,7 +4932,8 @@
       22,
       36,
       42,
-      2217
+      2217,
+      2305
     ],
     "secret entrance": [
       2
@@ -4829,11 +5027,14 @@
       96,
       303,
       2216,
-      2231
+      2231,
+      2303
     ],
     "figure emerges from the shadows": [
       2,
-      49
+      49,
+      2303,
+      2305
     ],
     "like the embers of": [
       2
@@ -5056,7 +5257,8 @@
       2237,
       2259,
       2284,
-      2285
+      2285,
+      2304
     ],
     "carried on the gentle breeze that rustles the silver leaves of the tall trees": [
       3
@@ -5121,7 +5323,9 @@
       2279,
       2280,
       2282,
-      2292
+      2292,
+      2303,
+      2304
     ],
     "faint mist rises from the surface": [
       3
@@ -5190,7 +5394,8 @@
       2247,
       2248,
       2249,
-      2260
+      2260,
+      2302
     ],
     "As you approach the dock": [
       3
@@ -5326,7 +5531,8 @@
     ],
     "their faces filled with": [
       3,
-      300
+      300,
+      2303
     ],
     "one who is rumored to possess knowledge of the legendary blade said to bring honor to its wielder": [
       3
@@ -5437,7 +5643,9 @@
       2277,
       2278,
       2279,
-      2280
+      2280,
+      2302,
+      2305
     ],
     "his voice carrying": [
       3
@@ -5872,7 +6080,8 @@
       2259,
       2260,
       2261,
-      2262
+      2262,
+      2302
     ],
     "spell of enchantment around the tavern patrons": [
       4
@@ -5954,7 +6163,8 @@
       63,
       2213,
       2235,
-      2236
+      2236,
+      2303
     ],
     "figure shrouded in darkness": [
       5
@@ -6288,7 +6498,8 @@
       2230,
       2232,
       2247,
-      2269
+      2269,
+      2302
     ],
     "clears his throat": [
       6
@@ -6673,7 +6884,8 @@
       2288,
       2289,
       2293,
-      2296
+      2296,
+      2303
     ],
     "Some say the mine holds": [
       7
@@ -6886,7 +7098,8 @@
       2282,
       2286,
       2287,
-      2289
+      2289,
+      2302
     ],
     "ll find the ancient ones": [
       7
@@ -6986,7 +7199,8 @@
     ],
     "but be warned": [
       8,
-      23
+      23,
+      2303
     ],
     "but the hooded figure continues": [
       8
@@ -7169,7 +7383,8 @@
       306,
       1903,
       2261,
-      2298
+      2298,
+      2304
     ],
     "haunting melody on his lute": [
       8
@@ -7328,7 +7543,8 @@
       2298,
       2299,
       2300,
-      2301
+      2301,
+      2305
     ],
     "please check your Groq API key and dependencies": [
       11
@@ -7394,10 +7610,13 @@
       2274,
       2276,
       2277,
-      2282
+      2282,
+      2302,
+      2303
     ],
     "Order": [
-      12
+      12,
+      2302
     ],
     "hoping to make some contacts and gather information through them": [
       12
@@ -7677,7 +7896,8 @@
       2274,
       2277,
       2278,
-      2290
+      2290,
+      2305
     ],
     "Just be sure to knock first": [
       13
@@ -7817,7 +8037,10 @@
       2231,
       2235,
       2263,
-      2292
+      2292,
+      2302,
+      2303,
+      2304
     ],
     "As the bartender finishes speaking": [
       13
@@ -7900,7 +8123,8 @@
       2231,
       2232,
       2235,
-      2260
+      2260,
+      2302
     ],
     "The journey will not be an easy one": [
       14
@@ -7955,7 +8179,8 @@
       2219,
       2222,
       2269,
-      2281
+      2281,
+      2303
     ],
     "as if searching for any hint of hesitation": [
       14
@@ -8184,7 +8409,8 @@
       2203,
       2225,
       2259,
-      2263
+      2263,
+      2303
     ],
     "crude map of the nearby Whispering Woods": [
       14
@@ -8602,7 +8828,8 @@
       2210,
       2216,
       2231,
-      2284
+      2284,
+      2302
     ],
     "re interested in you": [
       16
@@ -8735,7 +8962,8 @@
     ],
     "siren": [
       17,
-      22
+      22,
+      2305
     ],
     "where secrets and shadows lurk in every corner": [
       17
@@ -8825,7 +9053,9 @@
       2217,
       2223,
       2252,
-      2271
+      2271,
+      2304,
+      2305
     ],
     "As you listen for any sounds nearby": [
       17,
@@ -9346,7 +9576,8 @@
       768,
       2219,
       2222,
-      2236
+      2236,
+      2303
     ],
     "making it difficult to discern what": [
       19
@@ -9470,7 +9701,9 @@
       2281,
       2288,
       2289,
-      2292
+      2292,
+      2302,
+      2303
     ],
     "bound pouch partially hidden beneath the stall": [
       19
@@ -9743,7 +9976,9 @@
     "Which path will you choose": [
       20,
       58,
-      2296
+      2296,
+      2304,
+      2305
     ],
     "You recall the feeling of unease that settled in as you searched for useful objects on the floor": [
       20
@@ -10079,7 +10314,8 @@
     ],
     "strange": [
       22,
-      2263
+      2263,
+      2303
     ],
     "As you adjust your grip on your short sword": [
       22
@@ -10178,7 +10414,10 @@
       2281,
       2293,
       2295,
-      2300
+      2300,
+      2302,
+      2303,
+      2305
     ],
     "not entirely what you thought she was": [
       22
@@ -10371,7 +10610,9 @@
       2236,
       2263,
       2264,
-      2268
+      2268,
+      2304,
+      2305
     ],
     "where one could connect with the very essence of nature": [
       23
@@ -10862,7 +11103,8 @@
       2034,
       2208,
       2216,
-      2231
+      2231,
+      2304
     ],
     "warn you": [
       25,
@@ -11293,7 +11535,8 @@
       2220,
       2236,
       2252,
-      2282
+      2282,
+      2303
     ],
     "the warm sunlight of the setting sun casts": [
       27
@@ -11371,7 +11614,8 @@
       2236,
       2275,
       2276,
-      2296
+      2296,
+      2303
     ],
     "her voice friendly but with": [
       27
@@ -11398,7 +11642,8 @@
       2253
     ],
     "To your right": [
-      27
+      27,
+      2305
     ],
     "warm smile": [
       27,
@@ -12001,7 +12246,9 @@
       59,
       61,
       1554,
-      1723
+      1723,
+      2302,
+      2303
     ],
     "encounter": [
       30
@@ -12093,7 +12340,8 @@
       2285,
       2290,
       2296,
-      2301
+      2301,
+      2303
     ],
     "would never be free": [
       30,
@@ -12502,7 +12750,8 @@
       2280
     ],
     "What do you mean": [
-      32
+      32,
+      2303
     ],
     "and your curiosity is piqued": [
       32
@@ -15703,7 +15952,8 @@
     ],
     "She leans in closer": [
       36,
-      2252
+      2252,
+      2302
     ],
     "something that she": [
       36
@@ -16005,7 +16255,8 @@
       38
     ],
     "clearing": [
-      38
+      38,
+      2303
     ],
     "you notice that the trees seem to be growing taller and the air is thickening with an eerie": [
       38
@@ -16017,7 +16268,8 @@
       38,
       303,
       2203,
-      2223
+      2223,
+      2303
     ],
     "great revelation": [
       38
@@ -16080,7 +16332,9 @@
       38,
       2249,
       2259,
-      2292
+      2292,
+      2303,
+      2305
     ],
     "Elara -> you": [
       38
@@ -16176,7 +16430,8 @@
       38
     ],
     "and you can feel": [
-      38
+      38,
+      2303
     ],
     "the one that spoke to her in the forest": [
       38
@@ -16213,7 +16468,8 @@
       38
     ],
     "the trees seem to close in around you": [
-      38
+      38,
+      2303
     ],
     "can tell you about Aethereia": [
       38
@@ -16591,7 +16847,9 @@
       2290,
       2293,
       2298,
-      2299
+      2299,
+      2302,
+      2303
     ],
     "But what about the strange occurrences": [
       40
@@ -16773,7 +17031,8 @@
       2252
     ],
     "unsure of what to do next": [
-      41
+      41,
+      2303
     ],
     "Show me the grand tapestry": [
       41
@@ -16849,7 +17108,8 @@
       41
     ],
     "hoping to gain": [
-      41
+      41,
+      2303
     ],
     "music still echoes through the air": [
       41
@@ -17505,7 +17765,9 @@
       303
     ],
     "re being watched": [
-      44
+      44,
+      2304,
+      2305
     ],
     "the room is filled with": [
       44
@@ -20299,7 +20561,8 @@
     ],
     "You hesitate": [
       56,
-      62
+      62,
+      2303
     ],
     "Refuse to make promises": [
       56
@@ -21102,7 +21365,8 @@
     "entrance": [
       60,
       1821,
-      2269
+      2269,
+      2304
     ],
     "up to you to get her back": [
       60
@@ -72990,7 +73254,9 @@
       2281
     ],
     "Castle": [
-      69
+      69,
+      2302,
+      2303
     ],
     "figure pushed through the crowd": [
       69
@@ -73355,7 +73621,8 @@
     ],
     "intricately carved wooden box": [
       96,
-      2222
+      2222,
+      2303
     ],
     "place to rest and replenish your supplies": [
       96
@@ -74355,7 +74622,8 @@
       2262,
       2264,
       2265,
-      2268
+      2268,
+      2303
     ],
     "and his eyes seem to bore into the souls of those before him": [
       203
@@ -75371,7 +75639,8 @@
     ],
     "ve been searching for you": [
       298,
-      531
+      531,
+      2302
     ],
     "Master Harlon": [
       298,
@@ -76122,7 +76391,8 @@
     ],
     "smile on her lips": [
       301,
-      309
+      309,
+      2303
     ],
     "and the townspeople seemed to be going about their daily business with": [
       301
@@ -77160,7 +77430,8 @@
       308
     ],
     "warm atmosphere": [
-      308
+      308,
+      2302
     ],
     "quest is not just about ancient ruins or mysterious artifacts": [
       308
@@ -77728,7 +77999,8 @@
       383
     ],
     "warm summer evening": [
-      383
+      383,
+      2302
     ],
     "trophy within the dark": [
       383
@@ -78253,7 +78525,8 @@
       2283
     ],
     "and all eyes turn to you": [
-      422
+      422,
+      2302
     ],
     "He whispers something in the king": [
       422
@@ -78395,7 +78668,8 @@
     ],
     "sense of unease in the air": [
       422,
-      768
+      768,
+      2302
     ],
     "solemn": [
       422
@@ -78429,7 +78703,8 @@
       2237,
       2246,
       2282,
-      2287
+      2287,
+      2302
     ],
     "the sound of hammering on metal echoed through the air": [
       530
@@ -78694,7 +78969,8 @@
       531
     ],
     "they say in": [
-      531
+      531,
+      2303
     ],
     "but never returned": [
       531
@@ -78730,7 +79006,8 @@
       531
     ],
     "abandoned Temple of the Moon Goddess": [
-      531
+      531,
+      2304
     ],
     "enticing the townspeople to gather for breakfast": [
       531
@@ -79024,7 +79301,8 @@
       532
     ],
     "Rest": [
-      535
+      535,
+      2302
     ],
     "robust bard steps out": [
       535
@@ -79375,7 +79653,8 @@
     ],
     "depths": [
       705,
-      764
+      764,
+      2303
     ],
     "eerie howls in the night": [
       705
@@ -82698,7 +82977,8 @@
       1821
     ],
     "You consider Thorne": [
-      1821
+      1821,
+      2303
     ],
     "steps forward from the crowd": [
       1821
@@ -83484,7 +83764,8 @@
       2205
     ],
     "As you emerge from the dense forest": [
-      2205
+      2205,
+      2304
     ],
     "and we fear something terrible has happened to him": [
       2205
@@ -83970,7 +84251,8 @@
       2259
     ],
     "re not the only one searching for it": [
-      2208
+      2208,
+      2302
     ],
     "The townsfolk seem to be in": [
       2208
@@ -86216,7 +86498,8 @@
     "offer": [
       2222,
       2248,
-      2249
+      2249,
+      2303
     ],
     "can help you unlock the secrets within": [
       2222
@@ -86262,7 +86545,8 @@
     ],
     "She hands you": [
       2222,
-      2248
+      2248,
+      2303
     ],
     "sudden surge of confidence and readiness": [
       2222
@@ -91551,7 +91835,9 @@
       2269
     ],
     "The once": [
-      2269
+      2269,
+      2303,
+      2304
     ],
     "unassuming cottage on the outskirts of town": [
       2269
@@ -95313,7 +95599,8 @@
       2293
     ],
     "spell around you": [
-      2293
+      2293,
+      2305
     ],
     "gaze never wavers": [
       2293
@@ -96430,6 +96717,814 @@
     ],
     "held": [
       2301
+    ],
+    "The sound of waves crashing against the weathered docks echoes through the streets": [
+      2302
+    ],
+    "The room falls silent as you enter": [
+      2302
+    ],
+    "looking individuals hovering near the bar": [
+      2302
+    ],
+    "especially for the unwary": [
+      2302
+    ],
+    "enjoying the tavern": [
+      2302
+    ],
+    "abandoned Castle Eldrador": [
+      2302
+    ],
+    "Ask the mysterious woman for more information about the artifact and the Castle Eldrador": [
+      2302
+    ],
+    "The atmosphere is tense": [
+      2302
+    ],
+    "Head straight to the Castle Eldrador": [
+      2302,
+      2303
+    ],
+    "The bard in the corner raises his mug": [
+      2302
+    ],
+    "and the forest can be": [
+      2302
+    ],
+    "getting": [
+      2302,
+      2303
+    ],
+    "He says there": [
+      2302
+    ],
+    "beautiful young woman approaches you": [
+      2302
+    ],
+    "and the patrons follow suit": [
+      2302
+    ],
+    "treacherous place": [
+      2302
+    ],
+    "figure sitting in the corner": [
+      2302
+    ],
+    "the brave adventurer": [
+      2302
+    ],
+    "They seem to be discussing something in hushed tones": [
+      2302
+    ],
+    "There are those who": [
+      2302
+    ],
+    "Her raven": [
+      2302
+    ],
+    "stories": [
+      2302
+    ],
+    "mingling with the chatter of townsfolk": [
+      2302
+    ],
+    "mischievous glint": [
+      2302
+    ],
+    "recent voyage": [
+      2302
+    ],
+    "group of ruthless pirates": [
+      2302
+    ],
+    "his voice dripping with honey": [
+      2302
+    ],
+    "ll stop at nothing to get it": [
+      2302
+    ],
+    "casting frequent glances at the door": [
+      2302
+    ],
+    "and the sky is painted with hues of crimson and gold": [
+      2302
+    ],
+    "and you sense that something is brewing": [
+      2302
+    ],
+    "Ignore the message and explore the town": [
+      2302,
+      2303
+    ],
+    "Your name is whispered in awe by the townsfolk": [
+      2302
+    ],
+    "hidden treasure and never returned": [
+      2302
+    ],
+    "was -> by": [
+      2302
+    ],
+    "who often speak of your bravery and your ability to navigate treacherous landscapes with ease": [
+      2302
+    ],
+    "and the warm glow of the fire pit and the murmur of conversations envelop you": [
+      2302
+    ],
+    "The air seems to thicken with anticipation": [
+      2302
+    ],
+    "deep in the nearby forest": [
+      2302
+    ],
+    "drink and listen to the bard": [
+      2302
+    ],
+    "You are Dio": [
+      2302
+    ],
+    "They speak in hushed tones": [
+      2302
+    ],
+    "To Dio": [
+      2302
+    ],
+    "You push open the door to the tavern": [
+      2302
+    ],
+    "eager to claim the artifact and uncover its secrets": [
+      2302,
+      2303
+    ],
+    "waterfall": [
+      2302
+    ],
+    "and you notice": [
+      2302
+    ],
+    "group of shady": [
+      2302
+    ],
+    "The patrons resume their conversations": [
+      2302
+    ],
+    "feel for the local rumors and gossip": [
+      2302,
+      2303
+    ],
+    "The scent of sea salt and smoke wafts through the air as the sun sets over the quaint coastal town of Ravenshire": [
+      2302
+    ],
+    "As you stroll through the town": [
+      2302
+    ],
+    "and her bright blue eyes sparkle with": [
+      2302
+    ],
+    "message from": [
+      2302
+    ],
+    "May your journey be filled with fortune and glory": [
+      2302
+    ],
+    "Some say he was attacked by": [
+      2302
+    ],
+    "The townsfolk seem nervous": [
+      2302
+    ],
+    "valuable artifact hidden in the long": [
+      2302
+    ],
+    "mysterious adventurer with": [
+      2302
+    ],
+    "reputation for being fearless and insatiably curious": [
+      2302
+    ],
+    "her breath dancing across your ear": [
+      2302
+    ],
+    "black hair cascades down her back like": [
+      2302
+    ],
+    "cloaked in shadows": [
+      2302
+    ],
+    "their eyes never leaving you": [
+      2302
+    ],
+    "he cheers": [
+      2302
+    ],
+    "You consider her words": [
+      2302
+    ],
+    "the Raven": [
+      2302
+    ],
+    "while others claim he stumbled upon": [
+      2302
+    ],
+    "casting furtive glances at the local tavern": [
+      2302
+    ],
+    "friend": [
+      2302
+    ],
+    "local sailor who disappeared on": [
+      2302
+    ],
+    "sharing stories of": [
+      2302
+    ],
+    "perhaps century": [
+      2303
+    ],
+    "The artifact you seek lies within": [
+      2303
+    ],
+    "map and some information about the castle": [
+      2303
+    ],
+    "decades": [
+      2303
+    ],
+    "ve been watching over this castle for": [
+      2303
+    ],
+    "true adventurer": [
+      2303
+    ],
+    "The forest is full of dangers": [
+      2303
+    ],
+    "you set off towards the forest": [
+      2303
+    ],
+    "majestic structure now lies in shambles": [
+      2303
+    ],
+    "As you venture deeper into the forest": [
+      2303
+    ],
+    "you come across": [
+      2303
+    ],
+    "Refuse Thorne": [
+      2303
+    ],
+    "mix of envy and admiration": [
+      2303
+    ],
+    "You hear the distant howl of": [
+      2303
+    ],
+    "powerful ally who lies within": [
+      2303
+    ],
+    "the windows shattered": [
+      2303
+    ],
+    "knew": [
+      2303
+    ],
+    "With the map in hand": [
+      2303
+    ],
+    "the journey won": [
+      2303
+    ],
+    "its walls cracked and worn": [
+      2303
+    ],
+    "wolf": [
+      2303
+    ],
+    "and you won": [
+      2303
+    ],
+    "trying to decipher Thorne": [
+      2303
+    ],
+    "your voice low and controlled": [
+      2303
+    ],
+    "deciding that the journey was too perilous": [
+      2303
+    ],
+    "the castle is treacherous": [
+      2303
+    ],
+    "be easy": [
+      2303
+    ],
+    "and return to the town": [
+      2303
+    ],
+    "As you decide to head straight to the Castle Eldrador": [
+      2303
+    ],
+    "massive stone doorway adorned with intricate carvings of ancient runes": [
+      2303
+    ],
+    "hooded figure dressed in tattered robes": [
+      2303
+    ],
+    "Seek the aid of the mysterious ally who lies within": [
+      2303
+    ],
+    "narrow path leading into the castle": [
+      2303
+    ],
+    "The air is heavy with the scent of decay and neglect": [
+      2303
+    ],
+    "mysterious ally who lies within": [
+      2303
+    ],
+    "glint in his eye": [
+      2303
+    ],
+    "ancient traps and puzzles": [
+      2303
+    ],
+    "re determined to uncover its secrets": [
+      2303
+    ],
+    "ll have to decide for yourself": [
+      2303
+    ],
+    "ominous shadows across the ground": [
+      2303
+    ],
+    "or you can seek the aid of": [
+      2303
+    ],
+    "and in the center of it stands the ruined Castle Eldrador": [
+      2303
+    ],
+    "powerful ally in your quest for the artifact": [
+      2303
+    ],
+    "trying to uncover the secrets of the castle and the artifact": [
+      2303
+    ],
+    "Venture into the castle": [
+      2303
+    ],
+    "surge of excitement and anticipation": [
+      2303
+    ],
+    "but that would be telling": [
+      2303
+    ],
+    "The mystery of the artifact and the castle is too great to resist": [
+      2303
+    ],
+    "could count on you to take the first step": [
+      2303
+    ],
+    "ll need to be careful if you want to make it out alive": [
+      2303
+    ],
+    "relying on your wits and your courage to navigate its ancient traps and puzzles": [
+      2303
+    ],
+    "be the only one searching for it": [
+      2303
+    ],
+    "The townsfolk bid you farewell": [
+      2303
+    ],
+    "This contains": [
+      2303
+    ],
+    "and the rustling of leaves beneath your feet": [
+      2303
+    ],
+    "gravelly voice": [
+      2303
+    ],
+    "Will you brave the perilous path ahead": [
+      2303
+    ],
+    "the moon casting long": [
+      2303
+    ],
+    "their branches creaking ominously in the wind": [
+      2303
+    ],
+    "You approach the entrance": [
+      2303
+    ],
+    "My name is Thorne": [
+      2303
+    ],
+    "You take the box": [
+      2303
+    ],
+    "pulsating energy emanating from within": [
+      2303
+    ],
+    "Ask Thorne more questions": [
+      2303
+    ],
+    "Thorne seems to sense your unease": [
+      2303
+    ],
+    "You can either try to navigate the castle": [
+      2303
+    ],
+    "and nods in encouragement": [
+      2303
+    ],
+    "the mysterious woman nods in approval": [
+      2303
+    ],
+    "Thorne smiles": [
+      2303
+    ],
+    "After what feels like hours of walking": [
+      2303
+    ],
+    "or will you seek the aid of": [
+      2303
+    ],
+    "Thorne steps aside": [
+      2303
+    ],
+    "cobweb": [
+      2304
+    ],
+    "The air above seems to hum with an otherworldly energy": [
+      2304,
+      2305
+    ],
+    "The air is heavy with dust and the scent of aged parchment": [
+      2304
+    ],
+    "This route appears treacherous": [
+      2304
+    ],
+    "Straight ahead": [
+      2304,
+      2305
+    ],
+    "leaving you with the unsettling feeling that you": [
+      2304,
+      2305
+    ],
+    "following the whispers of": [
+      2304
+    ],
+    "whispering tales of bravery and sacrifice": [
+      2304,
+      2305
+    ],
+    "have been traveling for days": [
+      2304
+    ],
+    "stunning crystal chandelier that casts an ethereal glow upon the dusty": [
+      2304
+    ],
+    "the warm sunlight casts": [
+      2304
+    ],
+    "shroud over the area": [
+      2304
+    ],
+    "The wind carries the sweet scent of blooming wildflowers and the distant call of": [
+      2304
+    ],
+    "lone waterbird": [
+      2304
+    ],
+    "worn from countless adventures": [
+      2304
+    ],
+    "As you push the doors open": [
+      2304
+    ],
+    "drawing your attention to": [
+      2304
+    ],
+    "adorned with intricate carvings of lunar cycles and celestial events": [
+      2304
+    ],
+    "dominated by": [
+      2304
+    ],
+    "secrets reside within the very fabric of the moonlit sky": [
+      2304,
+      2305
+    ],
+    "golden glow upon your weathered leather armor": [
+      2304
+    ],
+    "Your stomach growls with anticipation as you step forward": [
+      2304
+    ],
+    "To the right": [
+      2304
+    ],
+    "Beyond the entrance lies": [
+      2304
+    ],
+    "grand staircase sweeps upwards": [
+      2304
+    ],
+    "you notice an eerie silence hangs like": [
+      2304
+    ],
+    "as if the temple": [
+      2304,
+      2305
+    ],
+    "hand on the hilt of your trusty sword": [
+      2304
+    ],
+    "narrow corridor disappears into darkness": [
+      2304
+    ],
+    "flickering torch casts dancing shadows upon the walls": [
+      2304
+    ],
+    "now covered in vines and moss": [
+      2304
+    ],
+    "disappearing into the shadows of the upper levels": [
+      2304,
+      2305
+    ],
+    "most revered stories": [
+      2304,
+      2305
+    ],
+    "lined with the silvery glow of luminescent mushrooms": [
+      2304,
+      2305
+    ],
+    "broad corridor stretches into the heart of the temple": [
+      2304
+    ],
+    "most revered companions": [
+      2304,
+      2305
+    ],
+    "covered frescoes depicting the Moon Goddess": [
+      2304
+    ],
+    "melodic voice seems to emanate from the end of the corridor": [
+      2304,
+      2305
+    ],
+    "that -> the": [
+      2304,
+      2305
+    ],
+    "majestic pillars": [
+      2304
+    ],
+    "To the left": [
+      2304
+    ],
+    "sprawling foyer": [
+      2304
+    ],
+    "drawing you closer to the ancient structure": [
+      2304
+    ],
+    "as if guarding": [
+      2304
+    ],
+    "The massive wooden doors": [
+      2304
+    ],
+    "lined with intricate frescoes and tapestries that tell the tale of the Moon Goddess": [
+      2304,
+      2305
+    ],
+    "yet beckons with the promise of hidden secrets": [
+      2304,
+      2305
+    ],
+    "fabled artifact hidden deep within the long": [
+      2304
+    ],
+    "As you approach the temple": [
+      2304
+    ],
+    "lone": [
+      2304
+    ],
+    "hang crookedly from their hinges": [
+      2304
+    ],
+    "trio of passageways that branch off in different directions": [
+      2304
+    ],
+    "seem to lean inwards": [
+      2304
+    ],
+    "faint whispering echoes through the temple": [
+      2304
+    ],
+    "You sense that there might be powerful magic waiting for you on those upper levels": [
+      2305
+    ],
+    "venturing into the darkness to uncover the secrets hidden within": [
+      2305
+    ],
+    "You can feel the thrill of adventure calling to you": [
+      2305
+    ],
+    "lock": [
+      2305
+    ],
+    "the words becoming clearer": [
+      2305
+    ],
+    "You glance to your left": [
+      2305
+    ],
+    "but the darkness that lies above seems daunting": [
+      2305
+    ],
+    "warm glow": [
+      2305
+    ],
+    "The woman": [
+      2305
+    ],
+    "key turning in": [
+      2305
+    ],
+    "song": [
+      2305
+    ],
+    "The darkness of the left corridor beckons": [
+      2305
+    ],
+    "with its promise of power and magic": [
+      2305
+    ],
+    "The air is heavy with the scent of aged parchment": [
+      2305
+    ],
+    "The stairway to the right seems to call to you": [
+      2305
+    ],
+    "seeking guidance and wisdom to aid you on your journey": [
+      2305
+    ],
+    "You must choose wisely": [
+      2305
+    ],
+    "and the soft whispering echoes through the temple": [
+      2305
+    ],
+    "Take the left corridor": [
+      2305
+    ],
+    "As you ponder your choice": [
+      2305
+    ],
+    "her steps silent on the stone floor": [
+      2305
+    ],
+    "the secrets you must uncover": [
+      2305
+    ],
+    "transporting you to": [
+      2305
+    ],
+    "challenge to be overcome": [
+      2305
+    ],
+    "nightingale": [
+      2305
+    ],
+    "the grand staircase sweeps upwards": [
+      2305
+    ],
+    "And the corridor ahead": [
+      2305
+    ],
+    "her eyes sparkling with warmth": [
+      2305
+    ],
+    "The words weave": [
+      2305
+    ],
+    "words are like": [
+      2305
+    ],
+    "the whispering in the temple grows louder": [
+      2305
+    ],
+    "Climb the grand staircase": [
+      2305
+    ],
+    "ascending into the shadows to claim the power that lies above": [
+      2305
+    ],
+    "Hi As you step into the foyer": [
+      2305
+    ],
+    "Follow the broad corridor": [
+      2305
+    ],
+    "as you weigh your options": [
+      2305
+    ],
+    "seems to sing": [
+      2305
+    ],
+    "woman with long": [
+      2305
+    ],
+    "and embracing the quest that lies ahead": [
+      2305
+    ],
+    "Ask the mysterious woman more questions": [
+      2305
+    ],
+    "their deeds etched in the stones of this ancient temple": [
+      2305
+    ],
+    "time when heroes roamed the land": [
+      2305
+    ],
+    "lined with the tales of heroes": [
+      2305
+    ],
+    "listening to the tale of heroes": [
+      2305
+    ],
+    "Your heart beats faster": [
+      2305
+    ],
+    "where the narrow corridor disappears into darkness": [
+      2305
+    ],
+    "The route appears treacherous": [
+      2305
+    ],
+    "and her voice is as melodious as": [
+      2305
+    ],
+    "But which one": [
+      2305
+    ],
+    "the broad corridor stretches into the heart of the temple": [
+      2305
+    ],
+    "tugging at your heartstrings": [
+      2305
+    ],
+    "clearing the way for": [
+      2305
+    ],
+    "for the fate of the Moon Goddess herself hangs in the balance": [
+      2305
+    ],
+    "song of glory and adventure": [
+      2305
+    ],
+    "She glides towards you": [
+      2305
+    ],
+    "the flickering torch above you casts": [
+      2305
+    ],
+    "know the path you must take": [
+      2305
+    ],
+    "flowing hair and eyes that shine like stars": [
+      2305
+    ],
+    "also know the dangers that lie ahead": [
+      2305
+    ],
+    "illuminating the dusty frescoes that depict the Moon Goddess": [
+      2305
+    ],
+    "have been waiting for you": [
+      2305
+    ],
+    "choice that will change the course of your journey": [
+      2305
+    ],
+    "You sense that the temple itself is guiding you": [
+      2305
+    ],
+    "promising secrets and hidden dangers": [
+      2305
+    ],
+    "urging you towards the right path": [
+      2305
     ]
   }
 }

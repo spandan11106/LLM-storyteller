@@ -1,6 +1,11 @@
 # storyteller/core/npc.py
 """
-NPC management system with emotion tracking
+🎭 The Character Workshop - Where Amazing NPCs Come to Life!
+
+This is where all the fascinating characters in your story live and grow!
+Each character has their own personality, emotions, and memories. They react
+to how you treat them and remember your interactions, making every conversation
+feel real and meaningful. It's like having a whole world of living characters!
 """
 
 import re
@@ -10,21 +15,23 @@ from ..utils.llm import llm_client
 
 
 class NPCManager:
-    """Manages NPCs and their emotional states"""
+    """🎪 Your Amazing Character Director - Bringing NPCs to Life with Personality!"""
     
     def __init__(self):
-        self.npcs: Dict[str, Dict[str, Any]] = {}
-        self.current_npcs: Set[str] = set()  # NPCs present in current conversation
+        self.npcs: Dict[str, Dict[str, Any]] = {}  # Our collection of amazing characters
+        self.current_npcs: Set[str] = set()         # Who's in the current scene
+        
+        # How different ways of talking affect character relationships
         self.tone_effects = {
-            "Polite": 5,
-            "Friendly": 3, 
-            "Neutral": 0,
-            "Rude": -10,
-            "Threatening": -20,
-            "Aggressive": -15
+            "Polite": 5,        # People love good manners!
+            "Friendly": 3,      # Friendliness goes a long way
+            "Neutral": 0,       # Just normal conversation
+            "Rude": -10,        # Nobody likes being treated badly
+            "Threatening": -20, # This really upsets people
+            "Aggressive": -15   # Aggression pushes people away
         }
         
-        # Common words to exclude from NPC detection
+        # Words we ignore when looking for character names
         self.excluded_words = {
             'you', 'your', 'yours', 'yourself', 'we', 'us', 'our', 'ours', 'ourselves',
             'they', 'them', 'their', 'theirs', 'themselves', 'he', 'him', 'his', 'himself',
@@ -47,46 +54,50 @@ class NPCManager:
         }
     
     def initialize_npc(self, name: str, occupation: str = "unknown", **attributes):
-        """Initialize a new NPC"""
+        """🌟 Welcome a new character to our amazing story world!"""
         self.npcs[name] = {
             "name": name,
             "occupation": occupation,
-            "relationship_score": 0,
-            "emotional_state": "Neutral",
-            "last_interaction": None,
-            "times_mentioned": 0,
-            **attributes
+            "relationship_score": 0,      # How much they like you (-100 to +100)
+            "emotional_state": "Neutral", # How they're feeling right now
+            "last_interaction": None,     # What you last said to them
+            "times_mentioned": 0,         # How often they appear in your story
+            **attributes                  # Any other cool traits they have
         }
+        print(f"🎭 {name} the {occupation} has joined your story!")
     
     def analyze_player_tone(self, player_input: str) -> str:
-        """Analyze the tone of player input"""
-        # Simple keyword-based tone analysis
+        """🎯 Figure out how you're talking to the characters - are you being nice?"""
         input_lower = player_input.lower()
         
+        # Words that show you're being polite and respectful
         polite_words = ["please", "thank you", "excuse me", "sorry", "may i", "could you"]
+        # Words that might hurt someone's feelings
         rude_words = ["shut up", "stupid", "idiot", "get out", "go away"]
+        # Words that would definitely scare someone
         threatening_words = ["kill", "hurt", "attack", "threaten", "fight", "die"]
+        # Words that show you're being friendly and kind
         friendly_words = ["hello", "hi", "friend", "help", "kind", "nice"]
         
         if any(word in input_lower for word in threatening_words):
-            return "Threatening"
+            return "Threatening"  # Yikes! That's scary talk!
         elif any(word in input_lower for word in rude_words):
-            return "Rude"
+            return "Rude"         # Not very nice...
         elif any(word in input_lower for word in polite_words):
-            return "Polite"
+            return "Polite"       # Such good manners!
         elif any(word in input_lower for word in friendly_words):
-            return "Friendly"
+            return "Friendly"     # How nice and welcoming!
         else:
-            return "Neutral"
+            return "Neutral"      # Just normal conversation
     
     def update_npc_emotion(self, npc_name: str, tone: str, interaction_text: str = ""):
-        """Update NPC emotional state based on interaction"""
+        """💭 Update how a character feels about you based on your interaction!"""
         if npc_name not in self.npcs:
-            self.initialize_npc(npc_name)
+            self.initialize_npc(npc_name)  # Welcome the new character!
         
         npc = self.npcs[npc_name]
         
-        # Update relationship score
+        # Characters remember how you treat them
         score_change = self.tone_effects.get(tone, 0)
         npc["relationship_score"] += score_change
         npc["last_interaction"] = interaction_text

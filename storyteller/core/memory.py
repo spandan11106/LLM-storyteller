@@ -1,6 +1,14 @@
 # storyteller/core/memory.py
 """
-Memory system for long-term conversation storage and retrieval
+🧠 The Amazing Memory Palace - Where Every Adventure Lives Forever!
+
+This is the incredible memory system that makes our AI storyteller truly special.
+Think of it as a magical library that never forgets a single detail from your
+adventures, allowing for truly persistent and evolving stories!
+
+Every conversation, every character interaction, every epic moment gets carefully
+stored and can be recalled instantly. It's like having a perfect memory that 
+grows more interesting with every adventure you embark upon!
 """
 
 import json
@@ -16,62 +24,70 @@ from ..config import (
     EMBEDDING_MODEL, VECTOR_DB_COLLECTION
 )
 
-# Try to import optional dependencies with fallbacks
+# Let's see what magical memory tools we have available!
 try:
     from sentence_transformers import SentenceTransformer
     HAS_EMBEDDINGS = True
+    print("🎉 Great! Smart memory search is ready to go!")
 except ImportError:
     HAS_EMBEDDINGS = False
+    print("📝 Note: Using basic memory (still awesome, just not as fancy!)")
     
 try:
     import chromadb
     HAS_CHROMADB = True
+    print("🗄️ Excellent! Advanced memory database is available!")
 except ImportError:
     HAS_CHROMADB = False
+    print("📚 Using simple file-based memory (perfectly fine for most adventures!)")
 
 
 @dataclass
 class MemoryEntry:
-    """Represents a single conversation turn in memory"""
+    """A precious memory from your adventure - every moment matters!"""
     
-    turn_id: int
-    timestamp: str
-    player_action: str
-    dm_response: str
-    extracted_facts: List[str]
-    importance_score: float
+    turn_id: int            # Which turn of the conversation was this?
+    timestamp: str          # When did this epic moment happen?
+    player_action: str      # What did you do?
+    dm_response: str        # How did the story unfold?
+    extracted_facts: List[str]  # Important things we learned
+    importance_score: float     # How epic was this moment?
 
 
 class DocumentMemorySystem:
-    """Document-based memory with token linking and retrieval"""
+    """🏰 Your Personal Memory Palace - Where Stories Come to Life!"""
     
     def __init__(self, save_path: str = None):
         self.save_path = save_path or MEMORY_SAVE_PATH
-        os.makedirs(self.save_path, exist_ok=True)
+        os.makedirs(self.save_path, exist_ok=True)  # Make sure our memory palace exists!
         
-        # Initialize embedding model for semantic search (with fallback)
+        # Let's set up our smart memory search tools (if available)
         if HAS_EMBEDDINGS:
             self.embedder = SentenceTransformer(EMBEDDING_MODEL)
+            print("🔍 Smart memory search is ready - we can find anything!")
         else:
             self.embedder = None
+            print("📝 Using keyword-based memory search (still works great!)")
         
-        # Initialize vector database (with fallback)
+        # Initialize our fancy memory database (if available)
         if HAS_CHROMADB:
             self.chroma_client = chromadb.Client()
             self.collection = self.chroma_client.get_or_create_collection(VECTOR_DB_COLLECTION)
+            print("🗄️ Advanced memory database is ready!")
         else:
             self.chroma_client = None
             self.collection = None
+            print("📚 Using simple file storage for memories")
         
-        # Memory storage
-        self.conversation_history: List[MemoryEntry] = []
-        self.fact_database: Dict[str, List[int]] = {}  # fact -> [turn_ids]
-        self.turn_counter = 0
+        # Our memory containers - where all the magic happens!
+        self.conversation_history: List[MemoryEntry] = []  # Every conversation we've had
+        self.fact_database: Dict[str, List[int]] = {}      # Quick lookup: fact -> conversation turns
+        self.turn_counter = 0                              # Keeping track of our adventure progress
         
-        self._load_existing_memory()
+        self._load_existing_memory()  # Bring back all our precious memories!
     
     def _load_existing_memory(self):
-        """Load existing memory from disk"""
+        """Wake up our memory palace and remember everything from before!"""
         memory_file = os.path.join(self.save_path, "memory.json")
         if os.path.exists(memory_file):
             try:
@@ -79,18 +95,22 @@ class DocumentMemorySystem:
                     data = json.load(f)
                     self.turn_counter = data.get('turn_counter', 0)
                     
-                    # Rebuild conversation history
+                    # Bring back all our amazing conversations
                     for entry_data in data.get('conversations', []):
                         entry = MemoryEntry(**entry_data)
                         self.conversation_history.append(entry)
                     
-                    # Rebuild fact database
+                    # Rebuild our fact lookup system
                     self.fact_database = data.get('facts', {})
+                    
+                    print(f"🎉 Memory restored! Found {len(self.conversation_history)} conversations and {len(self.fact_database)} facts!")
             except Exception as e:
-                print(f"Warning: Could not load existing memory: {e}")
+                print(f"⚠️ Couldn't load previous memories (starting fresh): {e}")
+        else:
+            print("🆕 Starting with a clean memory palace - let's create some epic memories!")
     
     def save_memory(self):
-        """Save memory to disk"""
+        """Carefully preserve all our precious memories for future adventures!"""
         data = {
             'turn_counter': self.turn_counter,
             'conversations': [
@@ -111,48 +131,50 @@ class DocumentMemorySystem:
         try:
             with open(memory_file, 'w') as f:
                 json.dump(data, f, indent=2)
+            print(f"💾 Memory saved! Protected {len(self.conversation_history)} conversations for posterity!")
         except Exception as e:
-            print(f"Warning: Could not save memory: {e}")
+            print(f"⚠️ Couldn't save memories (but they're still in active memory): {e}")
     
     def extract_facts(self, text: str) -> List[str]:
-        """Extract important facts/entities from text"""
+        """🔍 Hunt for important details and cool stuff in the conversation!"""
         facts = []
         
-        # Extract named entities (people, places, items)
+        # Look for interesting names, places, and things
         for pattern in ENTITY_PATTERNS:
             matches = re.findall(pattern, text, re.IGNORECASE)
             facts.extend([match.strip() for match in matches if len(match.strip()) > 2])
         
-        # Extract relationships and actions
+        # Spot relationships and actions between characters
         for pattern in RELATIONSHIP_PATTERNS:
             matches = re.findall(pattern, text, re.IGNORECASE)
             for match in matches:
-                facts.append(f"{match[0]} -> {match[1]}")
+                facts.append(f"{match[0]} -> {match[1]}")  # Who did what to whom
         
-        return list(set(facts))  # Remove duplicates
+        return list(set(facts))  # Keep each fact only once!
     
     def calculate_importance(self, player_action: str, dm_response: str) -> float:
-        """Calculate importance score for a conversation turn"""
+        """🌟 Figure out how epic and important this moment was!"""
         text = (player_action + " " + dm_response).lower()
         score = 0.0
         
+        # Check for epic keywords that make moments memorable
         for keyword in IMPORTANCE_KEYWORDS:
             if keyword in text:
-                score += 1.0
+                score += 1.0  # Each epic keyword makes it more important!
         
-        return min(score, 5.0)  # Cap at 5.0
+        return min(score, 5.0)  # Maximum epicness level is 5!
     
     def add_conversation_turn(self, player_action: str, dm_response: str):
-        """Add a new conversation turn to memory"""
+        """📝 Add this awesome moment to our permanent memory collection!"""
         self.turn_counter += 1
         
-        # Extract facts from both player action and DM response
+        # Hunt for interesting facts in this conversation
         facts = self.extract_facts(player_action + " " + dm_response)
         
-        # Calculate importance
+        # Rate how epic this moment was
         importance = self.calculate_importance(player_action, dm_response)
         
-        # Create memory entry
+        # Create a beautiful memory entry
         entry = MemoryEntry(
             turn_id=self.turn_counter,
             timestamp=datetime.now().isoformat(),

@@ -17,6 +17,9 @@ __pycache__/
 # 🧠 Database files (created during adventures)
 chromadb-*
 
+# 🧾 Saved memories from local play sessions (not needed in repo)
+memory_docs/
+
 # 🛠️ Development tool caches
 /.mypy_cache
 /.pytest_cache

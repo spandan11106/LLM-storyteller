@@ -50,7 +50,7 @@ This magical application is like having a brilliant storyteller living in your c
 ## 📋 What You'll Need for This Adventure
 
 🐍 **Python 3.10 or newer** - Don't worry, it's free and easy to install!
-📦 **A few magical dependencies** - We've made it super simple with our `requirements.txt` spell book:
+📦 **A few magical dependencies** - We've made it super simple with our [requirements.txt](requirements.txt) spell book:
     * `groq` - The brain that powers your AI Dungeon Master
     * `python-dotenv` - Keeps your API key safe and sound
     * `customtkinter` - Makes everything look absolutely gorgeous
@@ -111,32 +111,32 @@ python run_tests.py story       # Verify story consistency magic
 python run_tests.py performance # Ensure everything runs like lightning
 ```
 
-📚 **Want the full testing spellbook?** Check out `tests/README.md` for all the magical details!
+📚 **Want the full testing spellbook?** Check out [tests/README.md](tests/README.md) for all the magical details!
 
 ## 🗺️ Your Adventure Map (Project Structure)
 
 Here's where all the magic lives! Don't worry about understanding every detail - this is more like a treasure map for fellow adventurers who want to peek under the hood! 🔍
 
-* 🎪 `main.py`: Your gateway to adventure! This is where the magic begins when you start the app.
-* 🏰 `storyteller/`: The grand castle where all the storytelling magic happens:
-    * 🧠 `core/`: The brain center of our AI Dungeon Master
-        * `engine.py`: The master conductor orchestrating your entire adventure
-        * `character.py`: Your personal character workshop and memory keeper
-        * `memory.py`: The legendary three-tier memory palace (our secret sauce!)
-        * `npc.py`: Where every NPC gets their heart, soul, and emotional intelligence
-    * 🎨 `ui/`: The beautiful face of your adventure
-        * `gui.py`: Your gorgeous CustomTkinter interface with magical sidebars
-    * 🛠️ `utils/`: The helpful toolkit
-        * `llm.py`: The bridge to your AI Dungeon Master's brilliant mind
-    * ⚙️ `config.py`: All the settings and magical configurations
-* 🧪 `tests/`: Our quality assurance laboratory (where we make sure the magic never breaks!)
-    * `test_memory.py`: Legendary memory tests including the famous needle-in-haystack challenges
-    * `test_npc_emotions.py`: Making sure every NPC's heart beats true
-    * `test_story_consistency.py`: Ensuring your stories flow like epic novels
-    * `test_performance.py`: Keeping everything lightning-fast and responsive
-    * `run_all_tests.py`: The grand test conductor
-* 🎯 `run_tests.py`: Your friendly test launcher (makes testing magical and simple!)
+* 🎪 [main.py](main.py): Your gateway to adventure! This is where the magic begins when you start the app.
+* 🏰 [storyteller/](storyteller/): The grand castle where all the storytelling magic happens:
+    * 🧠 [core/](storyteller/core/): The brain center of our AI Dungeon Master
+        * [engine.py](storyteller/core/engine.py): The master conductor orchestrating your entire adventure
+        * [character.py](storyteller/core/character.py): Your personal character workshop and memory keeper
+        * [memory.py](storyteller/core/memory.py): The legendary three-tier memory palace (our secret sauce!)
+        * [npc.py](storyteller/core/npc.py): Where every NPC gets their heart, soul, and emotional intelligence
+    * 🎨 [ui/](storyteller/ui/): The beautiful face of your adventure
+        * [gui.py](storyteller/ui/gui.py): Your gorgeous CustomTkinter interface with magical sidebars
+    * 🛠️ [utils/](storyteller/utils/): The helpful toolkit
+        * [llm.py](storyteller/utils/llm.py): The bridge to your AI Dungeon Master's brilliant mind
+    * ⚙️ [config.py](storyteller/config.py): All the settings and magical configurations
+* 🧪 [tests/](tests/): Our quality assurance laboratory (where we make sure the magic never breaks!)
+    * [test_memory.py](tests/test_memory.py): Legendary memory tests including the famous needle-in-haystack challenges
+    * [test_npc_emotions.py](tests/test_npc_emotions.py): Making sure every NPC's heart beats true
+    * [test_story_consistency.py](tests/test_story_consistency.py): Ensuring your stories flow like epic novels
+    * [test_performance.py](tests/test_performance.py): Keeping everything lightning-fast and responsive
+    * [run_all_tests.py](tests/run_all_tests.py): The grand test conductor
+* 🎯 [run_tests.py](run_tests.py): Your friendly test launcher (makes testing magical and simple!)
 
 ## 📜 Legal Scroll (License)
 
-This entire magical kingdom is shared under the MIT License! That means you're free to use it, share it, modify it, and even build your own storytelling empire on top of it! Check out the `LICENSE` file for all the official details. 🤝✨
+This entire magical kingdom is shared under the MIT License! That means you're free to use it, share it, modify it, and even build your own storytelling empire on top of it! Check out the [LICENSE](LICENSE) file for all the official details. 🤝✨
